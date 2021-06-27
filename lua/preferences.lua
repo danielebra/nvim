@@ -21,8 +21,9 @@ Preferences = {
           useReverse = true, -- Background of highlighted region will be reversed when true, or yellow when false
         }
     },
+    enableSumnekoLuaLanguageServer = true, -- Provided by sumneko, requires submodule init for dependencies
     python = {
-        enableBlack = false, -- This formats code on <leader> f
+        enableBlack = true, -- This formats code on <leader> f
         enableIsort = true, -- This formats code on <leader> f
         enableFlake8 = true, -- This provides linter/format feedback to diagnostic system
         extraPaths = {}, -- This is used by pyright (lsp) to compute additional python paths
