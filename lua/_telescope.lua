@@ -18,14 +18,10 @@ require('telescope').setup {
         -- file_sorter = require'telescope.sorters'.get_fzy_sorter,
         file_ignore_patterns = {},
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
+        path_display = {"absolute"}, -- add shorten here if required
         layout_config = {
-            shorten_path = true,
-            width = 0.75,
-            preview_cutoff = 120,
-            results_height = 1,
-            results_width = 0.8,
             prompt_position = "top",
-            horizontal = {mirror = false},
+            horizontal = {mirror = false, width = 0.95, preview_width = 0.5},
             vertical = {mirror = false}
         },
         winblend = 0,

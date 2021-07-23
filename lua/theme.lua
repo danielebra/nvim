@@ -159,3 +159,4 @@ nvim_create_augroups({
     }
 })
 
+_apply_custom_theme() -- :thinking: theme is not applying automatically?
