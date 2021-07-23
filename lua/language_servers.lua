@@ -5,6 +5,15 @@ local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+    client.resolved_capabilities.document_formatting = false
+    require("lsp_signature").on_attach({
+        hint_enable = true,
+        hint_prefix = ' ',
+        max_width = 60,
+        hi_parametr= "Statement",
+        floating_window = Preferences.displayFloatingSignatures,
+
+    })
 
     -- Enable completion triggered by <c-x><c-o>
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')

@@ -64,5 +64,8 @@ return require("packer").startup(function(use)
     use "tpope/vim-surround" -- Control surrounding symbols
     use "tpope/vim-sleuth" -- Tabwidth detection
     use "rmagatti/auto-session" -- Session management
+
+    use {"ray-x/lsp_signature.nvim"} -- See signatures as you type
+    -- use {"lukas-reineke/indent-blankline.nvim", branch = "lua", opt=true} -- Indendation lines
 end)
 
