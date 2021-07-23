@@ -1,7 +1,7 @@
 local python_options = {} -- We will build this based on the user defined Preferences
 
 local flake8 = {
-    LintCommand = "flake8 --ignore=E501 --stdin-display-name ${INPUT} -",
+    LintCommand = "flake8 --stdin-display-name ${INPUT} -",
     lintStdin = true,
     lintFormats = {"%f:%l:%c: %m"}
 }
