@@ -24,7 +24,9 @@ require('gitsigns').setup {
     sign_priority = 6,
     current_line_blame = Preferences.git.showInlineBlame,
     current_line_blame_delay = Preferences.git.inlineBlameDelay,
+    current_line_blame_formatter_opts = { relative_time = true },
+
     update_debounce = 200,
     status_formatter = nil, -- Use default
-    use_decoration_api = false
+    use_decoration_api = false,
   }
