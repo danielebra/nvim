@@ -79,6 +79,11 @@ local mappings = {
         name = "Terminal",
         g = {"<cmd>lua _lazygit_toggle()<cr>", "Git"},
     },
+    o = {
+        name = "Open",
+        d = {"<cmd>TroubleToggle lsp_document_diagnostics<cr>", "Document diagnostics"},
+        q = {"<cmd>TroubleToggle quickfix<cr>", "Quickfix list"}
+    }
 }
 
 -- Direct leader key binds
