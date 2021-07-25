@@ -12,9 +12,12 @@ local function Editor()
     vim.api.nvim_command("hi Search guifg=red guibg=#4b4b4b")
     vim.api.nvim_command("hi IncSearch guifg=red guibg=#74716fa1")
 
+    -- Make the opposing bracket more visible
+    vim.api.nvim_command("hi MatchParen guifg=" .. Preferences.designSystem.palette.brightGreen .. " guibg=gray")
+
     -- Highlighted yank
     vim.api.nvim_command("hi clear HighlightedyankRegion")
-    if Preferences.designSystem.yank.useReverse == true then 
+    if Preferences.designSystem.yank.useReverse == true then
         vim.api.nvim_command("hi HighlightedyankRegion gui=reverse")
     else
         vim.api.nvim_command("hi HighlightedyankRegion  guifg=black guibg=" .. Preferences.designSystem.palette.yellow)
@@ -43,7 +46,7 @@ end
 
 local function SharedColours()
     vim.api.nvim_command('hi Todo guifg=red guibg=black')
-    vim.api.nvim_command( 'hi Boolean gui=italic guifg=' .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command('hi Boolean gui=italic guifg=' .. Preferences.designSystem.palette.lightBlue)
     -- Ideally this bright green would be for f strings"
     -- exec "hi String guifg=" . s:bright_green
     vim.api.nvim_command("hi String guifg=" .. Preferences.designSystem.palette.green)
@@ -53,27 +56,27 @@ local function SharedColours()
 end
 
 local function TypescriptColours()
-    vim.api.nvim_command( 'hi TypescriptReserved gui=italic guifg=' .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command('hi TypescriptReserved gui=italic guifg=' .. Preferences.designSystem.palette.lightBlue)
 
-    vim.api.nvim_command( 'hi typescriptDotNotation gui=bold guifg=' .. Preferences.designSystem.palette.lightBlue)
-    vim.api.nvim_command( 'hi typescriptEndColons gui=bold guifg=' .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command('hi typescriptDotNotation gui=bold guifg=' .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command('hi typescriptEndColons gui=bold guifg=' .. Preferences.designSystem.palette.lightBlue)
 
     -- if
-    vim.api.nvim_command( 'hi typescriptConditional guifg=' .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command('hi typescriptConditional guifg=' .. Preferences.designSystem.palette.lightBlue)
     -- return
-    vim.api.nvim_command( 'hi typescriptStatement guifg=' .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command('hi typescriptStatement guifg=' .. Preferences.designSystem.palette.lightBlue)
 
     -- const
-    vim.api.nvim_command( 'hi typescriptStorageClass guifg=' .. Preferences.designSystem.palette.purple)
+    vim.api.nvim_command('hi typescriptStorageClass guifg=' .. Preferences.designSystem.palette.purple)
     -- => this also is impacting ===, maybe disable it?
-    vim.api.nvim_command( 'hi typescriptOpSymbols guifg=' .. Preferences.designSystem.palette.purple)
+    vim.api.nvim_command('hi typescriptOpSymbols guifg=' .. Preferences.designSystem.palette.purple)
 end
 
 local function PythonColours()
     -- " Make quotation symbol blue
     vim.api.nvim_command("hi pythonQuotes guifg=" .. Preferences.designSystem.palette.lightBlue)
     -- " Make class purple
-    vim.api.nvim_command("hi pythonStatement guifg="..  Preferences.designSystem.palette.purple)
+    vim.api.nvim_command("hi pythonStatement guifg=" .. Preferences.designSystem.palette.purple)
     -- " Make functions yellow
     vim.api.nvim_command('hi pythonFunction guifg=' .. Preferences.designSystem.palette.yellow)
 
@@ -81,14 +84,14 @@ local function PythonColours()
     -- " Unfortunaletly, this is bleeding into True and False
     vim.api.nvim_command("hi pythonBuiltin gui=bold guifg=" .. Preferences.designSystem.palette.orange)
 
-    vim.api.nvim_command( 'hi PythonKeyword gui=italic guifg=' .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command('hi PythonKeyword gui=italic guifg=' .. Preferences.designSystem.palette.lightBlue)
     -- " for, while
-    vim.api.nvim_command( 'hi pythonRepeat guifg=' .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command('hi pythonRepeat guifg=' .. Preferences.designSystem.palette.lightBlue)
 
     -- " Make import statements light blue
-    vim.api.nvim_command( 'hi pythonInclude gui=italic guifg=' .. Preferences.designSystem.palette.lightBlue)
-    vim.api.nvim_command( 'hi pythonConditional guifg=' .. Preferences.designSystem.palette.lightBlue)
-    vim.api.nvim_command( "hi pythonDecoratorName guifg=" .. Preferences.designSystem.palette.blue)
+    vim.api.nvim_command('hi pythonInclude gui=italic guifg=' .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command('hi pythonConditional guifg=' .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi pythonDecoratorName guifg=" .. Preferences.designSystem.palette.blue)
 end
 
 local function LSPColours()
@@ -102,26 +105,32 @@ local function LSPColours()
     vim.api.nvim_command("hi pythonTSFunctionBuiltin gui=italic guifg=" .. Preferences.designSystem.palette.orange)
     vim.api.nvim_command("hi pythonTSInclude gui=italic guifg=" .. Preferences.designSystem.palette.lightBlue)
     vim.api.nvim_command("hi Constant gui=bold guifg=" .. Preferences.designSystem.palette.darkGray)
-    
+
     -- " exec "hi pythonTSMethod gui=italic guifg=" . s:orange " Function calls
 
-    vim.api.nvim_command( "hi TSParameter guifg=" .. Preferences.designSystem.palette.pink)
-    vim.api.nvim_command( "hi TSKeyword guifg=" .. Preferences.designSystem.palette.purple)
-    vim.api.nvim_command( "hi TSConditional guifg=" .. Preferences.designSystem.palette.lightBlue)
-    vim.api.nvim_command( "hi TSFunctionBuiltin gui=italic guifg=" .. Preferences.designSystem.palette.orange)
-    vim.api.nvim_command( "hi TSInclude gui=italic guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi TSParameter guifg=" .. Preferences.designSystem.palette.pink)
+    vim.api.nvim_command("hi TSKeyword guifg=" .. Preferences.designSystem.palette.purple)
+    vim.api.nvim_command("hi TSConditional guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi TSFunctionBuiltin gui=italic guifg=" .. Preferences.designSystem.palette.orange)
+    vim.api.nvim_command("hi TSInclude gui=italic guifg=" .. Preferences.designSystem.palette.lightBlue)
+
+    -- Errors (match galaxy line - which is not in design system)
+    vim.api.nvim_command("hi LspDiagnosticsDefaultError guifg=#F44747")
+    vim.api.nvim_command("hi LspDiagnosticsDefaultHint guifg=#FFCC66")
+    vim.api.nvim_command("hi LspDiagnosticsDefaultInformation guifg=#4FC1FF")
+    vim.api.nvim_command("hi LspDiagnosticsDefaultWarning guifg=#FF8800")
 end
 
 local function BarBar()
     -- " Buffer tab bar
-    vim.api.nvim_command( 'hi BufferCurrent guibg=' .. Preferences.designSystem.palette.purple)
-    vim.api.nvim_command( 'hi BufferCurrentSign guibg=' .. Preferences.designSystem.palette.purple)
+    vim.api.nvim_command('hi BufferCurrent guibg=' .. Preferences.designSystem.palette.purple)
+    vim.api.nvim_command('hi BufferCurrentSign guibg=' .. Preferences.designSystem.palette.purple)
     -- " exec 'hi BufferCurrent guifg=' . s:purple
     -- " exec 'hi BufferCurrentSign guifg=' . s:purple
 
-    vim.api.nvim_command( 'hi BufferVisible guifg=none guibg=none')
-    vim.api.nvim_command( 'hi BufferVisibleSign guifg=none guibg=none')
-    vim.api.nvim_command( 'hi link BufferVisibleMod BufferInactiveMod')
+    vim.api.nvim_command('hi BufferVisible guifg=none guibg=none')
+    vim.api.nvim_command('hi BufferVisibleSign guifg=none guibg=none')
+    vim.api.nvim_command('hi link BufferVisibleMod BufferInactiveMod')
 end
 
 function _apply_custom_theme()
@@ -138,25 +147,27 @@ end
 -- https://github.com/norcalli/nvim_utils/blob/master/lua/nvim_utils.lua#L554-L567
 -- At the time of creating this file, nvim doesn't support augroup. See PR: https://github.com/neovim/neovim/pull/12378
 function nvim_create_augroups(definitions)
-	for group_name, definition in pairs(definitions) do
-		vim.api.nvim_command('augroup '..group_name)
-		vim.api.nvim_command('autocmd!')
-		for _, def in ipairs(definition) do
-			local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
-			vim.api.nvim_command(command)
-		end
-		vim.api.nvim_command('augroup END')
-	end
+    for group_name, definition in pairs(definitions) do
+        vim.api.nvim_command('augroup ' .. group_name)
+        vim.api.nvim_command('autocmd!')
+        for _, def in ipairs(definition) do
+            local command = table.concat(vim.tbl_flatten {'autocmd', def}, ' ')
+            vim.api.nvim_command(command)
+        end
+        vim.api.nvim_command('augroup END')
+    end
 end
 
 nvim_create_augroups({
     _yank = {
-        {'TextYankPost', '*', "lua require('vim.highlight').on_yank({higroup = 'HighlightedyankRegion', timeout = " .. Preferences.designSystem.yank.highlightDuration .. "})"}
+        {
+            'TextYankPost', '*',
+            "lua require('vim.highlight').on_yank({higroup = 'HighlightedyankRegion', timeout = " ..
+                Preferences.designSystem.yank.highlightDuration .. "})"
+        }
 
-        },
-    _customTheme = {
-        { "ColorScheme", "*", "lua _apply_custom_theme()" }
-    }
+    },
+    _customTheme = {{"ColorScheme", "*", "lua _apply_custom_theme()"}}
 })
 
 _apply_custom_theme() -- :thinking: theme is not applying automatically?
