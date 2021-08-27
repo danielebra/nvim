@@ -68,5 +68,6 @@ return require("packer").startup(function(use)
     use {"ray-x/lsp_signature.nvim"} -- See signatures as you type
     use {"hashivim/vim-terraform"} -- Terraform & hcl support
     -- use {"lukas-reineke/indent-blankline.nvim", branch = "lua", opt=true} -- Indendation lines
+    use {"SmiteshP/nvim-gps"} -- Context of current code location
 end)
 

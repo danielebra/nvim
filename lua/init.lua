@@ -12,5 +12,6 @@ require('_gitsigns')
 require('_galaxyline')
 require('rooter')
 require('_colorizer')
+require('nvim_gps')
 
 require('theme')

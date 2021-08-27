@@ -133,6 +133,10 @@ local function BarBar()
     vim.api.nvim_command('hi link BufferVisibleMod BufferInactiveMod')
 end
 
+local function GalaxyLine()
+    vim.api.nvim_command('hi Statusline guibg=' ..  '#14161c')
+end
+
 function _apply_custom_theme()
     Editor()
     if Preferences.designSystem.enableTransparency == true then TransparentBackground() end
@@ -142,6 +146,7 @@ function _apply_custom_theme()
     PythonColours()
     LSPColours()
     BarBar()
+    GalaxyLine()
 end
 
 -- https://github.com/norcalli/nvim_utils/blob/master/lua/nvim_utils.lua#L554-L567
