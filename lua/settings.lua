@@ -1,4 +1,4 @@
-vim.cmd('set inccommand=split') -- Show substitution in real time hello
+vim.cmd('set inccommand=split') -- Show substitution in real time
 vim.o.completeopt = "menuone,noselect"
 vim.o.mouse = "a"
 vim.o.scrolloff = 8
@@ -40,6 +40,11 @@ vim.o.pumblend = 10 -- Pop up transparency
 vim.o.showmode = false -- Remove mode text
 
 vim.o.autoread = true -- Reload buffers on disk file updates
+
+-- Make line wraps more obvious
+vim.cmd('set breakindent')
+vim.cmd('set breakindentopt=shift:2')
+vim.cmd('set showbreak=↳')
 
 vim.cmd('let g:material_theme_style = "darker"')
 vim.cmd('colorscheme material')
