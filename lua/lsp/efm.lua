@@ -25,10 +25,16 @@ local tsserver = {
     }, prettier
 }
 
+-- This is pretty jank but gets the job done
+local hclformat = {
+    formatCommand = "terragrunt hclfmt ${INPUT} 1>/dev/null 2>/dev/null && cat ${INPUT}",
+    formatStdin = true
+}
+
 require"lspconfig".efm.setup {
     filetypes = {
         "lua", "python", "javascriptreact", "javascript", "typescript", "typescriptreact", "sh", "html", "css", "json",
-        "yaml", "markdown"
+        "yaml", "markdown", "hcl"
     },
     init_options = {documentFormatting = true},
     settings = {
@@ -44,7 +50,8 @@ require"lspconfig".efm.setup {
             html = {prettier},
             css = {prettier},
             json = {prettier},
-            yaml = {prettier}
+            yaml = {prettier},
+            hcl = {hclformat}
         }
     }
 }
