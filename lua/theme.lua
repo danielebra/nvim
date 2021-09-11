@@ -172,7 +172,8 @@ nvim_create_augroups({
         }
 
     },
-    _customTheme = {{"ColorScheme", "*", "lua _apply_custom_theme()"}}
+    _customTheme = {{"ColorScheme", "*", "lua _apply_custom_theme()"}},
+    resize_on_window_change = {{"VimResized", "*", ":wincmd =" }}
 })
 
 _apply_custom_theme() -- :thinking: theme is not applying automatically?
