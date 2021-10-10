@@ -10,6 +10,8 @@ require("nvim-gps").setup({
 		["go"] = true,
 		["java"] = true,
 		["javascript"] = true,
+		["typescript"] = true,
+		["typescriptreact"] = true,
 		["lua"] = true,
 		["python"] = true,
 		["rust"] = true,

@@ -5,7 +5,7 @@ local flake8 = {
     lintStdin = true,
     lintFormats = {"%f:%l:%c: %m"}
 }
-local black = {formatCommand = "black --quiet -", formatStdin = true}
+local black = {formatCommand = "black --quiet --line-length 100 -", formatStdin = true}
 local isort = {formatCommand = "isort --quiet -", formatStdin = true}
 
 if Preferences.python.enableFlake8 == true then table.insert(python_options, flake8) end

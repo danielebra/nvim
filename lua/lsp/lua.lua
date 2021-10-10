@@ -56,7 +56,6 @@ vim.lsp.protocol.CompletionItemKind = {
 }
 
 
-
 if Preferences.enableSumnekoLuaLanguageServer == true then
   -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
   USER = vim.fn.expand('$USER')

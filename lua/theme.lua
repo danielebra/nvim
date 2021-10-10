@@ -115,7 +115,9 @@ local function LSPColours()
     vim.api.nvim_command("hi TSInclude gui=italic guifg=" .. Preferences.designSystem.palette.lightBlue)
 
     -- Errors (match galaxy line - which is not in design system)
+    vim.api.nvim_command("hi DiagnosticError guifg=#F44747")
     vim.api.nvim_command("hi LspDiagnosticsDefaultError guifg=#F44747")
+    vim.api.nvim_command("hi DiagnosticHint guifg=#FFCC66")
     vim.api.nvim_command("hi LspDiagnosticsDefaultHint guifg=#FFCC66")
     vim.api.nvim_command("hi LspDiagnosticsDefaultInformation guifg=#4FC1FF")
     vim.api.nvim_command("hi LspDiagnosticsDefaultWarning guifg=#FF8800")
@@ -137,6 +139,12 @@ local function GalaxyLine()
     vim.api.nvim_command('hi Statusline guibg=' ..  '#14161c')
 end
 
+
+local function GitSigns()
+    vim.api.nvim_command('hi GitSignsCurrentLineBlame guifg=#545454 guibg=' ..  '#14161c')
+end
+
+
 function _apply_custom_theme()
     Editor()
     if Preferences.designSystem.enableTransparency == true then TransparentBackground() end
@@ -147,6 +155,7 @@ function _apply_custom_theme()
     LSPColours()
     BarBar()
     GalaxyLine()
+    GitSigns()
 end
 
 -- https://github.com/norcalli/nvim_utils/blob/master/lua/nvim_utils.lua#L554-L567
