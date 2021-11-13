@@ -125,5 +125,9 @@ vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>
 
 vim.api.nvim_set_keymap("n", "<leader>=", "<c-w>=", {noremap = true, silent = true})
 
+
+-- Repeat in visual mode
+vim.api.nvim_set_keymap("v", ".", ":'<,'>normal .<CR>", {noremap = true, silent = true})
+
 local whichKey = require("which-key")
 whichKey.register(mappings, opts)
