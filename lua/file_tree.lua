@@ -1,8 +1,8 @@
-vim.g.nvim_tree_hide_dotfiles = 1
+-- vim.g.nvim_tree_hide_dotfiles = 1
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_auto_close = 1
-vim.g.nvim_tree_follow = 1
+-- vim.g.nvim_tree_auto_close = 1
+-- vim.g.nvim_tree_follow = 1
 vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
 vim.g.nvim_tree_width_allow_resize  = 1
 vim.g.nvim_tree_add_trailing = 1
@@ -32,7 +32,7 @@ require'nvim-tree'.setup {-- following options are the default
   -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
   update_cwd          = false,
   -- show lsp diagnostics in the signcolumn
-  lsp_diagnostics     = false,
+  -- lsp_diagnostics     = false, --# Runtime error with this setting, its deprecated -- TODO: Investigate
   -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
   update_focused_file = {
     -- enables the feature

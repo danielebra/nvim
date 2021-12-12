@@ -5,3 +5,4 @@ autocmd BufReadPost *
   \ endif
 
 lua require 'init'
+let g:loaded_python_provider = 0 " Disable python2

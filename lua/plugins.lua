@@ -29,8 +29,9 @@ end
 
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
-vim.g.nvim_tree_disable_netrw = 0
-vim.g.nvim_tree_hijack_netrw = 0
+-- Deprecated and moved to nvim_tree setup()
+-- vim.g.nvim_tree_disable_netrw = 0
+-- vim.g.nvim_tree_hijack_netrw = 0
 
 -- Note: Specify { "package", opt = true } (emphasis on opt) to keep a package in the list
 -- but not have it loaded into the neovim session.
