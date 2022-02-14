@@ -18,13 +18,19 @@ require('gitsigns').setup {
       noremap = true,
       buffer = true,
     },
-    watch_index = {
-      interval = 1000
+    watch_gitdir = {
+      interval = 1000,
+      follow_files = true
     },
     sign_priority = 6,
     current_line_blame = Preferences.git.showInlineBlame,
-    current_line_blame_delay = Preferences.git.inlineBlameDelay,
     current_line_blame_formatter_opts = { relative_time = true },
+    current_line_blame_opts = {
+      virt_text = true,
+      virt_text_pos = 'eol',
+      delay = Preferences.git.inlineBlameDelay,
+      ignore_whitespace = false,
+    },
 
     update_debounce = 200,
     status_formatter = nil, -- Use default
