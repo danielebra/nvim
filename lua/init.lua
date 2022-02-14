@@ -16,5 +16,6 @@ require('nvim_gps')
 -- require('comments')
 
 require('cosmic')
+require('notifications')
 
 require('theme')

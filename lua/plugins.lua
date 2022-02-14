@@ -76,6 +76,9 @@ return require("packer").startup(function(use)
     -- use {"lukas-reineke/indent-blankline.nvim", branch = "lua", opt=true} -- Indendation lines
     use {"SmiteshP/nvim-gps"} -- Context of current code location
 
-    use {'CosmicNvim/cosmic-ui', requires = {{'MunifTanjim/nui.nvim'}, {'nvim-lua/plenary.nvim'}}}
+    use {'CosmicNvim/cosmic-ui', requires = {{'MunifTanjim/nui.nvim'}, {'nvim-lua/plenary.nvim'}}} -- Code Actions floating UI
+
+    use {"rcarriga/nvim-notify"} -- Notification UI
+
 end)
 
