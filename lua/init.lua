@@ -15,4 +15,6 @@ require('_colorizer')
 require('nvim_gps')
 -- require('comments')
 
+require('cosmic')
+
 require('theme')

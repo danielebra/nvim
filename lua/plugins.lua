@@ -75,5 +75,7 @@ return require("packer").startup(function(use)
     use {"hashivim/vim-terraform"} -- Terraform & hcl support
     -- use {"lukas-reineke/indent-blankline.nvim", branch = "lua", opt=true} -- Indendation lines
     use {"SmiteshP/nvim-gps"} -- Context of current code location
+
+    use {'CosmicNvim/cosmic-ui', requires = {{'MunifTanjim/nui.nvim'}, {'nvim-lua/plenary.nvim'}}}
 end)
 

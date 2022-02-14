@@ -87,6 +87,7 @@ local mappings = {
 }
 
 -- Direct leader key binds
+vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua require("cosmic-ui").code_actions()<cr>', {noremap = true, silent= true}) -- Code Actions
 
 -- Lazygit toggle is defined in terminal.lua
 vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
