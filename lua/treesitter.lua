@@ -28,6 +28,18 @@ require'nvim-treesitter.configs'.setup {
     -- TODO seems to be broken
     indent = {enable = false},
     -- indent = {enable = {"javascriptreact", "python"}},
-    autotag = {enable = true}
+    autotag = {enable = true},
 
+    rainbow = {
+        enable = true,
+        colors = {
+            Preferences.designSystem.palette.lightBlue,
+            Preferences.designSystem.palette.purple,
+            Preferences.designSystem.palette.yellow,
+            Preferences.designSystem.palette.orange,
+            Preferences.designSystem.palette.maroon,
+            Preferences.designSystem.palette.brightGreen,
+            Preferences.designSystem.palette.lightGray,
+        }
+    }
 }

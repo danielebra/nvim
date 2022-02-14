@@ -79,6 +79,7 @@ return require("packer").startup(function(use)
     use {'CosmicNvim/cosmic-ui', requires = {{'MunifTanjim/nui.nvim'}, {'nvim-lua/plenary.nvim'}}} -- Code Actions floating UI
 
     use {"rcarriga/nvim-notify"} -- Notification UI
+    use {"p00f/nvim-ts-rainbow"} -- Rainbow brackets
 
 end)
 
