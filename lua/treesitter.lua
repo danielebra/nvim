@@ -11,10 +11,22 @@ require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true -- false will disable the whole extension
     },
-    context_commentstring = {enable = true, config = {css = '// %s'}},
+    context_commentstring = {
+        enable = true,
+        config = {
+            typescriptreact = {
+                __default = 'xx// %s',
+                jsx_element = 'xx{/* %s */}',
+                jsx_fragment = 'xx{/* %s */}',
+                jsx_attribute = 'xx// %s',
+                comment = 'xx// %s'
+            }
+        }
+    },
+    -- context_commentstring = {enable = true, config = {css = '// %s'}},
     -- indent = {enable = true, disable = {"python", "html", "javascript"}},
     -- TODO seems to be broken
-    indent = { enable = false},
+    indent = {enable = false},
     -- indent = {enable = {"javascriptreact", "python"}},
     autotag = {enable = true}
 

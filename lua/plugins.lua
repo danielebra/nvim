@@ -59,11 +59,12 @@ return require("packer").startup(function(use)
 
     use 'folke/lsp-colors.nvim' -- Fill in the missing colours that lsp uses
 
-    use 'JoosepAlviste/nvim-ts-context-commentstring' -- File context aware comment provider
     use 'tpope/vim-commentary' -- Comment provider
+    -- use 'numToStr/Comment.nvim'
+    use 'JoosepAlviste/nvim-ts-context-commentstring' -- File context aware comment provider
 
     use "glepnir/galaxyline.nvim" -- Bottom line
-    use "ahmedkhalf/lsp-rooter.nvim" -- Use LSP to switch to root of project
+    -- use "ahmedkhalf/lsp-rooter.nvim" -- Use LSP to switch to root of project
     use "norcalli/nvim-colorizer.lua" -- Colours for RGB etc
     use "tpope/vim-surround" -- Control surrounding symbols
     use "tpope/vim-sleuth" -- Tabwidth detection
