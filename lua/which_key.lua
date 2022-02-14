@@ -81,7 +81,7 @@ local mappings = {
     },
     o = {
         name = "Open",
-        d = {"<cmd>TroubleToggle lsp_document_diagnostics<cr>", "Document diagnostics"},
+        d = {"<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics"},
         q = {"<cmd>TroubleToggle quickfix<cr>", "Quickfix list"}
     }
 }
