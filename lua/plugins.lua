@@ -81,5 +81,7 @@ return require("packer").startup(function(use)
     use {"rcarriga/nvim-notify"} -- Notification UI
     use {"p00f/nvim-ts-rainbow"} -- Rainbow brackets
 
+    use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" } -- Run tests
+
 end)
 
