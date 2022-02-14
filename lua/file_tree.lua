@@ -1,9 +1,5 @@
--- vim.g.nvim_tree_hide_dotfiles = 1
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_indent_markers = 1
--- vim.g.nvim_tree_auto_close = 1
--- vim.g.nvim_tree_follow = 1
-vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
 vim.g.nvim_tree_width_allow_resize  = 1
 vim.g.nvim_tree_add_trailing = 1
 vim.g.nvim_tree_disable_window_picker = 1
@@ -33,6 +29,15 @@ require'nvim-tree'.setup {-- following options are the default
   update_cwd          = false,
   -- show lsp diagnostics in the signcolumn
   -- lsp_diagnostics     = false, --# Runtime error with this setting, its deprecated -- TODO: Investigate
+  diagnostics = {
+    enable = true,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    }
+  },
   -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
   update_focused_file = {
     -- enables the feature
@@ -43,6 +48,10 @@ require'nvim-tree'.setup {-- following options are the default
     -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
     -- only relevant when `update_focused_file.update_cwd` is true and `update_focused_file.enable` is true
     ignore_list = {}
+  },
+  filters = {
+    dotfiles = false,
+    custom = { '.git', 'node_modules', '.cache' }
   },
   -- configuration options for the system open command (`s` in the tree by default)
   system_open = {
