@@ -27,6 +27,7 @@ Preferences = {
         enableIsort = true, -- This formats code on <leader> f
         enableFlake8 = true, -- This provides linter/format feedback to diagnostic system
         extraPaths = {}, -- This is used by pyright (lsp) to compute additional python paths
+        enableMypy = true, -- This provides linter/format feedback to diagnostic system
     },
     git = {
         showInlineBlame = true,

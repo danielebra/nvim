@@ -5,12 +5,24 @@ local flake8 = {
     lintStdin = true,
     lintFormats = {"%f:%l:%c: %m"}
 }
+local mypy = {
+    lintCommand = "mypy --show-column-numbers",
+    -- lintFormats = {"%f=%l:%c: %trror: %m", "%f=%l:%c: %tarning: %m", "%f=%l:%c: %tote: %m"},
+    lintIgnoreExitCode = true,
+    lintSource = "mypy",
+    -- lintFormats = {
+    --     "%f:%l:%c: %terror: %m",
+    --     "%f:%l:%c: %tarning: %m",
+    --     "%f:%l:%c: %tote: %m",
+    -- }
+}
 local black = {formatCommand = "black --quiet --line-length 100 -", formatStdin = true}
 local isort = {formatCommand = "isort --quiet -", formatStdin = true}
 
 if Preferences.python.enableFlake8 == true then table.insert(python_options, flake8) end
 if Preferences.python.enableBlack == true then table.insert(python_options, black) end
 if Preferences.python.enableIsort == true then table.insert(python_options, isort) end
+if Preferences.python.enableMypy == true then table.insert(python_options, mypy) end
 
 local prettier = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
 
