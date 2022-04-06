@@ -32,7 +32,6 @@ Preferences = {
     git = {
         showInlineBlame = true,
         inlineBlameDelay =  200,
-    }
     },
     displayFloatingSignatures = false, -- When typing, a floating window will apprear with signature help
 }
