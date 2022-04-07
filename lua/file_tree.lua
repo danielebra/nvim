@@ -2,7 +2,6 @@ vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_width_allow_resize  = 1
 vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_disable_window_picker = 1
 require'nvim-tree'.setup {-- following options are the default
   -- disables netrw completely
   disable_netrw       = false,
@@ -13,7 +12,7 @@ require'nvim-tree'.setup {-- following options are the default
   -- will not open on setup if the filetype is in this list
   ignore_ft_on_setup  = {},
   -- closes neovim automatically when the tree is the last **WINDOW** in the view
-  auto_close          = true,
+  -- auto_close          = true,
   -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
   open_on_tab         = false,
   -- hijacks new directory buffers when they are opened.
@@ -77,5 +76,13 @@ require'nvim-tree'.setup {-- following options are the default
       -- list of mappings to set on the tree manually
       list = {}
     }
+  },
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false
+      }
+    }
   }
+
 }
