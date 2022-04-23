@@ -1,5 +1,4 @@
 vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_width_allow_resize  = 1
 vim.g.nvim_tree_add_trailing = 1
 require'nvim-tree'.setup {-- following options are the default
@@ -83,6 +82,19 @@ require'nvim-tree'.setup {-- following options are the default
         enable = false
       }
     }
-  }
+  },
+  renderer = {
+    indent_markers = {
+      enable = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
+    },
+    icons = {
+      webdev_colors = true,
+    },
+  },
 
 }
