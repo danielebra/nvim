@@ -41,6 +41,7 @@ return require("packer").startup(function(use)
     use "kyazdani42/nvim-web-devicons" -- Icons used for tree and others
     use "kyazdani42/nvim-tree.lua" -- File explorer
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+    use {'nvim-treesitter/nvim-treesitter-textobjects'}
     use "romgrk/barbar.nvim" -- Buffer bar
     use "neovim/nvim-lspconfig" -- Language server
     use {"hrsh7th/nvim-compe", requires = {"hrsh7th/vim-vsnip"}} -- Autocomplete
