@@ -1,6 +1,4 @@
-vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_width_allow_resize  = 1
-vim.g.nvim_tree_add_trailing = 1
 require'nvim-tree'.setup {-- following options are the default
   -- disables netrw completely
   disable_netrw       = false,
@@ -95,6 +93,8 @@ require'nvim-tree'.setup {-- following options are the default
     icons = {
       webdev_colors = true,
     },
+    highlight_git = true,
+    add_trailing = true,
   },
 
 }
