@@ -34,5 +34,4 @@ require('gitsigns').setup {
 
     update_debounce = 200,
     status_formatter = nil, -- Use default
-    use_decoration_api = false,
   }
