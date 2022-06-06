@@ -21,7 +21,7 @@ Preferences = {
           useReverse = true, -- Background of highlighted region will be reversed when true, or yellow when false
         }
     },
-    enableSumnekoLuaLanguageServer = true, -- Provided by sumneko, requires submodule init for dependencies
+    enableSumnekoLuaLanguageServer = false, -- Provided by sumneko, requires submodule init for dependencies
     python = {
         enableBlack = true, -- This formats code on <leader> f
         enableIsort = true, -- This formats code on <leader> f
