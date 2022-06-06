@@ -20,3 +20,4 @@ require('cosmic')
 require('notifications')
 
 require('theme')
+require('ultest')
