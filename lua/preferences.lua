@@ -15,7 +15,7 @@ Preferences = {
             green = '#C3E88D',
             orange = '#F78C6C'
         },
-        enableTransparency = false,
+        enableTransparency = true,
         yank = {
           highlightDuration = 250,
           useReverse = true, -- Background of highlighted region will be reversed when true, or yellow when false
