@@ -22,6 +22,7 @@ Preferences = {
         }
     },
     enableSumnekoLuaLanguageServer = false, -- Provided by sumneko, requires submodule init for dependencies
+    insertModeLSPDiagnostics = true, -- Display LSP diagnotic feedback while in insert mode
     python = {
         enableBlack = true, -- This formats code on <leader> f
         enableIsort = true, -- This formats code on <leader> f

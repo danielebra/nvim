@@ -12,6 +12,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     },
     signs = true,
     underline = true,
+    update_in_insert = Preferences.insertModeLSPDiagnostics,
   }
 )
 
