@@ -44,7 +44,8 @@ return require("packer").startup(function(use)
     use {'nvim-treesitter/nvim-treesitter-textobjects'}
     use "romgrk/barbar.nvim" -- Buffer bar
     use "neovim/nvim-lspconfig" -- Language server
-    use {"hrsh7th/nvim-compe", requires = {"hrsh7th/vim-vsnip"}} -- Autocomplete
+    -- use {"hrsh7th/nvim-compe", requires = {"hrsh7th/vim-vsnip"}} -- Autocomplete
+    use {"ms-jpq/coq_nvim"}
 
     use {"kaicataldo/material.vim", branch = 'main'}
     use {"folke/trouble.nvim"} -- Pretty diagnostics
