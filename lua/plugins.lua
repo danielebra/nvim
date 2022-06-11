@@ -45,7 +45,7 @@ return require("packer").startup(function(use)
     use "romgrk/barbar.nvim" -- Buffer bar
     use "neovim/nvim-lspconfig" -- Language server
     -- use {"hrsh7th/nvim-compe", requires = {"hrsh7th/vim-vsnip"}} -- Autocomplete
-    use {"ms-jpq/coq_nvim"}
+    use {"ms-jpq/coq_nvim", requires ={{"ms-jpq/coq.artifacts"}, {"ms-jpq/coq.thirdparty"}}}
 
     use {"kaicataldo/material.vim", branch = 'main'}
     use {"folke/trouble.nvim"} -- Pretty diagnostics

@@ -1,4 +1,5 @@
 require('preferences')
+require('customisation.coq')
 require('plugins')
 require('settings')
 require('file_tree')
