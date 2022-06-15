@@ -37,6 +37,7 @@ brew install hashicorp/tap/terraform-ls
 brew install luarocks
 brew install efm-langserver
 brew install pandoc
+brew install gopls
 ```
 
 ``` sh
