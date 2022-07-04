@@ -27,3 +27,22 @@ local lazygit = Terminal:new({
   function _lazygit_toggle()
     lazygit:toggle()
   end
+
+local lazydocker = Terminal:new({
+    cmd = "lazydocker",
+    dir = "git_dir",
+    count=5,
+    direction = "float",
+    close_on_exit = true,
+    float_opts = {
+      border = "double",
+    },
+    -- function to run on opening the terminal
+    on_open = function(term)
+      vim.api.nvim_buf_set_keymap(term.bufnr, "n", "<esc>", "<cmd>lua _lazydocker_toggle()<CR>", {noremap = true, silent = true})
+    end,
+  })
+
+  function _lazydocker_toggle()
+    lazydocker:toggle()
+  end

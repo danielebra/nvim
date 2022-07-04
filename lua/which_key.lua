@@ -79,6 +79,7 @@ local mappings = {
     t = {
         name = "Terminal",
         g = {"<cmd>lua _lazygit_toggle()<cr>", "Git"},
+        d = {"<cmd>lua _lazydocker_toggle()<cr>", "Docker"},
     },
     o = {
         name = "Open",
