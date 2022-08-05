@@ -85,6 +85,16 @@ local mappings = {
         name = "Open",
         d = {"<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics"},
         q = {"<cmd>TroubleToggle quickfix<cr>", "Quickfix list"}
+    },
+    h = {
+        name = "Hunk",
+        n = {"<cmd>Gitsigns next_hunk<cr>", "Next"},
+        p = {"<cmd>Gitsigns prev_hunk<cr>", "Previous"},
+        P = {"<cmd>Gitsigns preview_hunk<cr>", "Preview"},
+        s = {"<cmd>Gitsigns stage_hunk<cr>", "Stage"},
+        S = {"<cmd>Gitsigns stage_hunk<cr>", "Select"},
+        u = {"<cmd>Gitsigns undo_stage_hunk<cr>", "Undo"},
+        q = {"<cmd>Gitsigns setqflist<cr>", "Quickfix list"}
     }
 }
 
