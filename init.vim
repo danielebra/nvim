@@ -14,3 +14,10 @@ set shortmess+=c
 if filereadable(".project.vimrc")
     so .project.vimrc
 endif
+
+" Persist folds
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent! loadview
+augroup END
