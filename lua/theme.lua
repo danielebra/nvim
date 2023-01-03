@@ -147,6 +147,8 @@ local function LSPColoursBreakingChange()
     vim.api.nvim_command("hi statement guifg=" .. Preferences.designSystem.palette.lightBlue)
     vim.api.nvim_command("hi include gui=italic guifg=" .. Preferences.designSystem.palette.lightBlue)
     vim.api.nvim_command("hi conditional guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi @function.builtin guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi @keyword.return guifg=" .. Preferences.designSystem.palette.lightBlue)
 
     vim.api.nvim_command("hi @variable guifg=none")
 end
