@@ -62,8 +62,6 @@ require'nvim-tree'.setup {-- following options are the default
     width = 30,
     -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
     side = 'left',
-    -- if true the tree will resize itself after opening a file
-    auto_resize = false,
     mappings = {
       -- custom only false will merge the list with the default mappings
       -- if true, it will only use your list to set the mappings
@@ -74,6 +72,7 @@ require'nvim-tree'.setup {-- following options are the default
   },
   actions = {
     open_file = {
+      resize_window = false,
       window_picker = {
         enable = false
       }
