@@ -82,7 +82,9 @@ return require("packer").startup(function(use)
     use {"rcarriga/nvim-notify"} -- Notification UI
     use {"p00f/nvim-ts-rainbow"} -- Rainbow brackets
 
-    use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" } -- Run tests
+    -- use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" } -- Run tests (No longer maintained, reccomended to use neotest)
+
+    use { "nvim-neotest/neotest", requires = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter", "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-python" } } -- Run tests
 
     use {"nvim-treesitter/playground"} -- Insights into treesitter
 

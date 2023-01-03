@@ -100,7 +100,7 @@ local mappings = {
 
 -- Direct leader key binds
 vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua require("cosmic-ui").code_actions()<cr>', {noremap = true, silent= true}) -- Code Actions
-vim.api.nvim_set_keymap('n', '<leader>T', '<cmd>UltestNearest<cr>', {noremap = true, silent= true}) -- Run nearest unit test
+vim.api.nvim_set_keymap('n', '<leader>T', '<cmd>lua require("neotest").run.run()<cr>', {noremap = true, silent= true}) -- Run nearest unit test
 
 -- Lazygit toggle is defined in terminal.lua
 vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
