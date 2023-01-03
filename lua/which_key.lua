@@ -135,7 +135,7 @@ vim.api.nvim_set_keymap("n", "<Up>", "<cmd>resize +2<CR>", {noremap = true, sile
 vim.api.nvim_set_keymap("n", "<Left>", "<cmd>vertical resize -2<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Right>", "<cmd>vertical resize +2<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<leader>=", "<c-w>=", {noremap = true, silent = true})
 
