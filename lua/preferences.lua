@@ -19,7 +19,8 @@ Preferences = {
         yank = {
           highlightDuration = 250,
           useReverse = true, -- Background of highlighted region will be reversed when true, or yellow when false
-        }
+        },
+        linkTreesitterGroups = false -- For backwards compatibality with neovim 0.7. In 0.8, treesitter has breaking changes. Enable this to link old highlight groups to their new names
     },
     enableSumnekoLuaLanguageServer = false, -- Provided by sumneko, requires submodule init for dependencies
     insertModeLSPDiagnostics = true, -- Display LSP diagnotic feedback while in insert mode
@@ -29,6 +30,7 @@ Preferences = {
         enableFlake8 = true, -- This provides linter/format feedback to diagnostic system
         extraPaths = {}, -- This is used by pyright (lsp) to compute additional python paths
         enableMypy = true, -- This provides linter/format feedback to diagnostic system
+        enableRuff = true, -- Fast python linting and formatting with ruff (Rust tool)
     },
     git = {
         showInlineBlame = true,
