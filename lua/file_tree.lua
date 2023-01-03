@@ -13,7 +13,7 @@ require'nvim-tree'.setup {-- following options are the default
   -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
   open_on_tab         = false,
   -- hijacks new directory buffers when they are opened.
-  update_to_buf_dir   = {
+  hijack_directories   = {
     -- enable the feature
     enable = true,
     -- allow to open the tree if it was previously closed
@@ -60,8 +60,6 @@ require'nvim-tree'.setup {-- following options are the default
   view = {
     -- width of the window, can be either a number (columns) or a string in `%`, for left or right side placement
     width = 30,
-    -- height of the window, can be either a number (columns) or a string in `%`, for top or bottom side placement
-    height = 30,
     -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
     side = 'left',
     -- if true the tree will resize itself after opening a file

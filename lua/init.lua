@@ -21,3 +21,5 @@ require('notifications')
 
 require('theme')
 require('ultest')
+
+require("auto_session")
