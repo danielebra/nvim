@@ -149,8 +149,9 @@ local function LSPColoursBreakingChange()
     vim.api.nvim_command("hi conditional guifg=" .. Preferences.designSystem.palette.lightBlue)
     vim.api.nvim_command("hi @function.builtin guifg=" .. Preferences.designSystem.palette.lightBlue)
     vim.api.nvim_command("hi @keyword.return guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi @constant.builtin guifg=" .. Preferences.designSystem.palette.lightBlue)
 
-    vim.api.nvim_command("hi @variable guifg=none")
+    vim.api.nvim_command("hi @variable guifg=white")
 end
 
 local function BarBar()
