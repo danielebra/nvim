@@ -43,10 +43,15 @@ local hclformat = {
     formatStdin = true
 }
 
+local terraform = {
+    formatCommand = "terraform fmt -",
+    formatStdin = true
+}
+
 require"lspconfig".efm.setup {
     filetypes = {
         "lua", "python", "javascriptreact", "javascript", "typescript", "typescriptreact", "sh", "html", "css", "json",
-        "yaml", "markdown", "hcl"
+        "yaml", "markdown", "hcl", "terraform"
     },
     init_options = {documentFormatting = true},
     settings = {
@@ -63,7 +68,10 @@ require"lspconfig".efm.setup {
             css = {prettier},
             json = {prettier},
             yaml = {prettier},
-            hcl = {hclformat}
+            hcl = {hclformat},
+            terraform = {terraform},
         }
     }
 }
+-- Autoformat terraform on save
+vim.cmd [[autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()]]
