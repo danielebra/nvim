@@ -50,6 +50,7 @@ local mappings = {
     ["q"] = "Quit all",
     ["Q"] = "Quit",
     ["w"] = "Write",
+    ["W"] = "Write (no auto cmd)",
     ["z"] = "Zen",
     ["e"] = "Explore",
     ["g"] = "Git",
@@ -110,6 +111,7 @@ vim.api.nvim_set_keymap("n", "<leader><ESC>", "<cmd>nohl<CR>", {noremap = true, 
 vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>qa<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>Q", "<cmd>q<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>W", "<cmd>noa w<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<leader>|", "<cmd>vsplit<CR>", {noremap = true, silent = true})
