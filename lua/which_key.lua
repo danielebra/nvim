@@ -95,7 +95,13 @@ local mappings = {
         S = {"<cmd>Gitsigns stage_hunk<cr>", "Select"},
         u = {"<cmd>Gitsigns undo_stage_hunk<cr>", "Undo"},
         q = {"<cmd>Gitsigns setqflist<cr>", "Quickfix list"}
+    },
+    y = {
+        name = "Yank",
+        p = {"<cmd>lua require('nvim-tree.api').tree.focus()<CR><cmd>lua require('nvim-tree.api').fs.copy.absolute_path()<CR><cmd>wincmd p<CR>","Path to file"}
+
     }
+
 }
 
 -- Direct leader key binds
@@ -138,7 +144,6 @@ vim.api.nvim_set_keymap("n", "<Right>", "<cmd>vertical resize +2<CR>", {noremap 
 vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<leader>=", "<c-w>=", {noremap = true, silent = true})
-
 
 -- Repeat in visual mode
 vim.api.nvim_set_keymap("v", ".", ":'<,'>normal .<CR>", {noremap = true, silent = true})
