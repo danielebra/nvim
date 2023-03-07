@@ -88,5 +88,7 @@ return require("packer").startup(function(use)
 
     use {"nvim-treesitter/playground"} -- Insights into treesitter
 
+    use {"williamboman/mason.nvim", 'williamboman/mason-lspconfig.nvim' } -- LSP management
+
 end)
 
