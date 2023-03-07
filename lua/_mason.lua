@@ -40,7 +40,16 @@ local duped_on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, opts)
 
 end
-require("mason").setup()
+
+require("mason").setup({
+    ensure_installed = { "eslint", "black", "prettier", "flake8", "mypy", "isort" }
+})
+
+-- Bootleg ensure_installed because it doesnt exist in mason
+vim.api.nvim_create_user_command("MasonInstallAll", function()
+  vim.cmd("MasonInstall " .. table.concat(options.ensure_installed, " "))
+end, {})
+
 require("mason-lspconfig").setup({
     ensure_installed = { "bashls", "dockerls", "graphql", "tsserver", "marksman", "pyright", "terraformls", "yamlls", "jsonls"}
 
