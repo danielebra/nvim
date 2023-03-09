@@ -141,7 +141,8 @@ local function LSPColoursBreakingChange()
 
     vim.api.nvim_command("hi @boolean guifg=" .. Preferences.designSystem.palette.maroon)
 
-    vim.api.nvim_command("hi @field guifg=" .. Preferences.designSystem.palette.gray)
+    -- Experimenting with a different shade of blue here as it is similar to the gray and lightblue
+    vim.api.nvim_command("hi @field guifg=" .. "lightblue")--.. Preferences.designSystem.palette.gray)
 
     vim.api.nvim_command("hi @keyword.operator guifg=" .. Preferences.designSystem.palette.lightBlue)
     vim.api.nvim_command("hi statement guifg=" .. Preferences.designSystem.palette.lightBlue)
