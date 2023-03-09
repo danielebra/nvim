@@ -45,6 +45,7 @@ require("mason").setup({
 })
 
 -- Bootleg ensure_installed because it doesnt exist in mason
+-- https://github.com/williamboman/mason.nvim/issues/130#issuecomment-1217773757
 vim.api.nvim_create_user_command("MasonInstallAll", function()
   vim.cmd("MasonInstall " .. table.concat(Preferences.linters, " "))
 end, {})
