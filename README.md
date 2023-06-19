@@ -1,7 +1,11 @@
-# Notes
+# Design
 
-This is a WIP conversion to Neovim Lua & LSP. Requires Neavim 0.5 and
-above.
+| Attribute   | Colour friendly name | Colour code | note |
+| ----------- | -------------------- | ----------- | ---- |
+| Class names | Yellow               | #FFCB6B     |      |
+| String | Green               | #C3E88D     |      |
+
+# Notes
 
 Clone into `~/.config/nvim`
 
@@ -9,14 +13,14 @@ Update Plugins
 
 See `lua/preference.lua` for user level configuration.
 
-``` vim
+```vim
 :PackerInstall
 :PackerCompile
 ```
 
 ## Lua language server
 
-``` sh
+```sh
 brew install ninja
 cd ~/.config/nvim
 
@@ -32,7 +36,7 @@ cd ../..
 
 ## Language servers
 
-``` sh
+```sh
 brew install hashicorp/tap/terraform-ls
 brew install luarocks
 brew install efm-langserver
@@ -40,11 +44,11 @@ brew install pandoc
 brew install gopls
 ```
 
-``` sh
+```sh
 luarocks install --server=https://luarocks.org/dev luaformatter
 ```
 
-``` sh
+```sh
 yarn global add pyright \
     typescript \
     typescript-language-server \
