@@ -4,7 +4,6 @@ require('settings')
 require('file_tree')
 require('treesitter')
 require('treesitter_textobjects')
-require('language_servers')
 require('_compe')
 require('terminal')
 require('which_key')
@@ -21,3 +20,8 @@ require('notifications')
 
 require('theme')
 require('ultest')
+
+require("auto_session")
+
+require('_mason')
+-- require('language_servers')

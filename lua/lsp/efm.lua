@@ -19,10 +19,19 @@ local mypy = {
 local black = {formatCommand = "black --quiet --line-length 100 -", formatStdin = true}
 local isort = {formatCommand = "isort --quiet -", formatStdin = true}
 
+local ruff = {
+    lintCommand = "ruff --quiet ${INPUT}",
+    lintStdin = true,
+    lintFormats = "%f:%l:%c: %m",
+    formatCommand = "ruff --stdin-filename ${INPUT} --fix --exit-zero --quiet -",
+    formatStdin = true
+}
+
 if Preferences.python.enableFlake8 == true then table.insert(python_options, flake8) end
 if Preferences.python.enableBlack == true then table.insert(python_options, black) end
 if Preferences.python.enableIsort == true then table.insert(python_options, isort) end
 if Preferences.python.enableMypy == true then table.insert(python_options, mypy) end
+if Preferences.python.enableRuff == true then table.insert(python_options, ruff) end
 
 local prettier = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
 

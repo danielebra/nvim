@@ -123,6 +123,38 @@ local function LSPColours()
     vim.api.nvim_command("hi LspDiagnosticsDefaultWarning guifg=#FF8800")
 end
 
+local function LSPColoursBreakingChange()
+    vim.api.nvim_command("hi keyword guifg=" .. Preferences.designSystem.palette.purple)
+
+    vim.api.nvim_command("hi @parameter guifg=" .. Preferences.designSystem.palette.pink)
+
+    vim.api.nvim_command("hi function.builtin gui=italic guifg=" .. Preferences.designSystem.palette.orange)
+
+    vim.api.nvim_command("hi constant gui=bold guifg=" .. Preferences.designSystem.palette.darkGray)
+
+    vim.api.nvim_command("hi @Constructor guifg=" .. Preferences.designSystem.palette.yellow)
+
+    vim.api.nvim_command("hi @variable.builtin guifg=" .. Preferences.designSystem.palette.yellow) -- Create a visual reference between an instance and a class (eg self matches the colour of a class constructor)
+
+    -- Not sure about this one, but this keeps it same colour as before
+    vim.api.nvim_command("hi @attribute.builtin guifg=" .. Preferences.designSystem.palette.blue)
+
+    vim.api.nvim_command("hi @boolean guifg=" .. Preferences.designSystem.palette.maroon)
+
+    -- Experimenting with a different shade of blue here as it is similar to the gray and lightblue
+    vim.api.nvim_command("hi @field guifg=" .. "lightblue")--.. Preferences.designSystem.palette.gray)
+
+    vim.api.nvim_command("hi @keyword.operator guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi statement guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi include gui=italic guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi conditional guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi @function.builtin guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi @keyword.return guifg=" .. Preferences.designSystem.palette.lightBlue)
+    vim.api.nvim_command("hi @constant.builtin guifg=" .. Preferences.designSystem.palette.lightBlue)
+
+    vim.api.nvim_command("hi @variable guifg=white")
+end
+
 local function BarBar()
     -- " Buffer tab bar
     vim.api.nvim_command('hi BufferCurrent guibg=' .. Preferences.designSystem.palette.purple)
@@ -156,6 +188,7 @@ function _apply_custom_theme()
     BarBar()
     GalaxyLine()
     GitSigns()
+    LSPColoursBreakingChange()
 end
 
 -- https://github.com/norcalli/nvim_utils/blob/master/lua/nvim_utils.lua#L554-L567
@@ -186,3 +219,119 @@ nvim_create_augroups({
 })
 
 _apply_custom_theme() -- :thinking: theme is not applying automatically?
+
+
+
+local hl = function(group, opts)
+    opts.default = true
+    vim.api.nvim_set_hl(0, group, opts)
+end
+
+
+if Preferences.designSystem.linkTreesitterGroups then 
+-- Misc {{{
+    hl('@comment', {link = 'Comment'})
+    -- hl('@error', {link = 'Error'})
+    hl('@none', {bg = 'NONE', fg = 'NONE'})
+    hl('@preproc', {link = 'PreProc'})
+    hl('@define', {link = 'Define'})
+    hl('@operator', {link = 'Operator'})
+    -- }}}
+
+    -- Punctuation {{{
+    hl('@punctuation.delimiter', {link = 'Delimiter'})
+    hl('@punctuation.bracket', {link = 'Delimiter'})
+    hl('@punctuation.special', {link = 'Delimiter'})
+    -- }}}
+
+    -- Literals {{{
+    hl('@string', {link = 'String'})
+    hl('@string.regex', {link = 'String'})
+    hl('@string.escape', {link = 'SpecialChar'})
+    hl('@string.special', {link = 'SpecialChar'})
+
+    hl('@character', {link = 'Character'})
+    hl('@character.special', {link = 'SpecialChar'})
+
+    hl('@boolean', {link = 'Boolean'})
+    hl('@number', {link = 'Number'})
+    hl('@float', {link = 'Float'})
+    -- }}}
+
+    -- Functions {{{
+    hl('@function', {link = 'Function'})
+    hl('@function.call', {link = 'Function'})
+    hl('@function.builtin', {link = 'Special'})
+    hl('@function.macro', {link = 'Macro'})
+
+    hl('@method', {link = 'Function'})
+    hl('@method.call', {link = 'Function'})
+
+    hl('@constructor', {link = 'Special'})
+    hl('@parameter', {link = 'Identifier'})
+    -- }}}
+
+    -- Keywords {{{
+    hl('@keyword', {link = 'Keyword'})
+    hl('@keyword.function', {link = 'Keyword'})
+    hl('@keyword.operator', {link = 'Keyword'})
+    hl('@keyword.return', {link = 'Keyword'})
+
+    hl('@conditional', {link = 'Conditional'})
+    hl('@repeat', {link = 'Repeat'})
+    hl('@debug', {link = 'Debug'})
+    hl('@label', {link = 'Label'})
+    hl('@include', {link = 'Include'})
+    hl('@exception', {link = 'Exception'})
+    -- }}}
+
+    -- Types {{{
+    hl('@type', {link = 'Type'})
+    hl('@type.builtin', {link = 'Type'})
+    hl('@type.qualifier', {link = 'Type'})
+    hl('@type.definition', {link = 'Typedef'})
+
+    hl('@storageclass', {link = 'StorageClass'})
+    hl('@attribute', {link = 'PreProc'})
+    hl('@field', {link = 'Identifier'})
+    hl('@property', {link = 'Identifier'})
+    -- }}}
+
+    -- Identifiers {{{
+    hl('@variable', {link = 'Normal'})
+    hl('@variable.builtin', {link = 'Special'})
+
+    hl('@constant', {link = 'Constant'})
+    hl('@constant.builtin', {link = 'Special'})
+    hl('@constant.macro', {link = 'Define'})
+
+    hl('@namespace', {link = 'Include'})
+    hl('@symbol', {link = 'Identifier'})
+    -- }}}
+
+    -- Text {{{
+    hl('@text', {link = 'Normal'})
+    hl('@text.strong', {bold = true})
+    hl('@text.emphasis', {italic = true})
+    hl('@text.underline', {underline = true})
+    hl('@text.strike', {strikethrough = true})
+    hl('@text.title', {link = 'Title'})
+    hl('@text.literal', {link = 'String'})
+    hl('@text.uri', {link = 'Underlined'})
+    hl('@text.math', {link = 'Special'})
+    hl('@text.environment', {link = 'Macro'})
+    hl('@text.environment.name', {link = 'Type'})
+    hl('@text.reference', {link = 'Constant'})
+
+    hl('@text.todo', {link = 'Todo'})
+    hl('@text.note', {link = 'SpecialComment'})
+    hl('@text.warning', {link = 'WarningMsg'})
+    hl('@text.danger', {link = 'ErrorMsg'})
+    -- }}}
+
+    -- Tags {{{
+    hl('@tag', {link = 'Tag'})
+    hl('@tag.attribute', {link = 'Identifier'})
+    hl('@tag.delimiter', {link = 'Delimiter'})
+    -- }}}
+end

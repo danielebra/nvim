@@ -13,11 +13,11 @@ require('gitsigns').setup {
     },
     numhl = false,
     linehl = false,
-    keymaps = {
-      -- Default keymap options
-      noremap = true,
-      buffer = true,
-    },
+    -- keymaps = {
+    --   -- Default keymap options
+    --   noremap = true,
+    --   buffer = true,
+    -- },
     watch_gitdir = {
       interval = 1000,
       follow_files = true

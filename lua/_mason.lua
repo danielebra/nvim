@@ -1,8 +1,4 @@
-local nvim_lsp = require('lspconfig')
-
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local duped_on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
     client.server_capabilities.documentFormattingProvider = false
@@ -17,7 +13,6 @@ local on_attach = function(client, bufnr)
 
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
 
     -- Mappings.
     local opts = {noremap = true, silent = true}
@@ -46,24 +41,47 @@ local on_attach = function(client, bufnr)
 
 end
 
-nvim_lsp["pyright"].setup {
-    on_attach = on_attach,
-    settings = {
-        python = {
-            analysis = {
-                autoSearchPaths = true,
-                diagnosticMode = "workspace",
-                useLibraryCodeForTypes = true,
-                extraPaths = Preferences.python.extraPaths
-            }
+require("mason").setup({
+})
+
+-- Bootleg ensure_installed because it doesnt exist in mason
+-- https://github.com/williamboman/mason.nvim/issues/130#issuecomment-1217773757
+vim.api.nvim_create_user_command("MasonInstallAll", function()
+  vim.cmd("MasonInstall " .. table.concat(Preferences.linters, " "))
+end, {})
+
+require("mason-lspconfig").setup({
+    ensure_installed =  Preferences.languageServers
+
+})
+
+local nvim_lsp = require('lspconfig')
+
+require("mason-lspconfig").setup_handlers {
+    -- The first entry (without a key) will be the default handler
+    -- and will be called for each installed server that doesn't have
+    -- a dedicated handler.
+    function (server_name) -- default handler (optional)
+        require("lspconfig")[server_name].setup { on_attach = duped_on_attach}
+    end,
+    -- Next, you can provide a dedicated handler for specific servers.
+    -- For example, a handler override for the `rust_analyzer`:
+    ["pyright"] = function ()
+        nvim_lsp.pyright.setup {
+            on_attach = duped_on_attach,
+            settings = {
+                python = {
+                    analysis = {
+                        autoSearchPaths = true,
+                        diagnosticMode = "workspace",
+                        useLibraryCodeForTypes = true,
+                        extraPaths = Preferences.python.extraPaths
+                    }
+                }
         }
     }
+    end
 }
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = {"tsserver", "dockerls", "terraformls", "gopls"} --, "ruff_lsp"}
-for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach} end
 
 require("lsp.lua")
 require("lsp.efm")
