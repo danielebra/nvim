@@ -35,11 +35,11 @@ vim.lsp.protocol.CompletionItemKind = {
     "   (Snippet)",
     "   (Color)",
     "   (File)",
-    "   (Reference)",
+    "  (Reference)", -- 
     "   (Folder)",
     "   (EnumMember)",
     " ﲀ  (Constant)",
-    " ﳤ  (Struct)",
+    "  (Struct)", --  ﳤ
     "   (Event)",
     "   (Operator)",
     "   (TypeParameter)"

@@ -1,4 +1,33 @@
 local cmp = require'cmp'
+-- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
+-- Note: Keep this in sync with lua/lsp/lua.lua
+local completion_icons = {
+  Text = " ",
+  Method = "",
+  Function = "",
+  Constructor = "",
+  Field = "ﴲ",
+  Variable = "[]",
+  Class = "",
+  Interface = "ﰮ",
+  Module = "",
+  Property = "襁",
+  Unit = "",
+  Value = "",
+  Enum = "練",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "ﲀ",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
 
 cmp.setup({
   snippet = {
@@ -7,11 +36,14 @@ cmp.setup({
       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
     end,
   },
+
   completion = { completeopt = 'menu,menuone,noinsert' },
+
   window = {
     -- completion = cmp.config.window.bordered(),
     -- documentation = cmp.config.window.bordered(),
   },
+
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -19,12 +51,30 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
+
+  formatting = {
+   format = function(entry, vim_item)
+        -- Kind icons
+        vim_item.kind = string.format('%s %s', completion_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+        -- Source
+        vim_item.menu = ({
+          buffer = "[Buffer]",
+          nvim_lsp = "[LSP]",
+          luasnip = "[LuaSnip]",
+          nvim_lua = "[Lua]",
+          latex_symbols = "[LaTeX]",
+        })[entry.source.name]
+        return vim_item
+      end
+    },
+  
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_signature_help' },
     { name = 'vsnip' }, -- For vsnip users.
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 -- Set configuration for specific filetype.
