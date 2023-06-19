@@ -45,13 +45,16 @@ return require("packer").startup(function(use)
     use "romgrk/barbar.nvim" -- Buffer bar
     use "neovim/nvim-lspconfig" -- Language server
 
-    -- use {"hrsh7th/nvim-compe", requires = {"hrsh7th/vim-vsnip"}} -- Autocomplete Deprecated
+    use {"hrsh7th/nvim-compe", requires = {"hrsh7th/vim-vsnip"}} -- Autocomplete Deprecated
     use {"hrsh7th/nvim-cmp", requires = {
         {"hrsh7th/vim-vsnip"}, 
         {"hrsh7th/cmp-nvim-lsp"},
         {"hrsh7th/cmp-buffer"},
         {"hrsh7th/cmp-path"},
-        {"hrsh7th/cmp-cmdline"}
+        {"hrsh7th/cmp-cmdline"},
+        {"hrsh7th/cmp-calc"},
+        {"hrsh7th/cmp-nvim-lsp-signature-help"},
+        {"FelipeLema/cmp-async-path"},
     }} -- Autocomplete
 
     use {"kaicataldo/material.vim", branch = 'main'}

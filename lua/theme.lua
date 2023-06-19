@@ -176,6 +176,22 @@ local function GitSigns()
     vim.api.nvim_command('hi GitSignsCurrentLineBlame guifg=#545454 guibg=' ..  '#14161c')
 end
 
+local function CompletionColours() 
+    -- Searching/Completion menu
+    vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg='NONE', fg='#BB80B3' })
+    vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { bg='NONE', fg='#BB80B3' })
+
+    vim.api.nvim_set_hl(0, 'CmpItemKindText', { bg='NONE', fg=Preferences.designSystem.palette.green})
+
+    -- Class
+    vim.api.nvim_set_hl(0, 'CmpItemKindClass', { bg='NONE', fg=Preferences.designSystem.palette.yellow})
+    -- Function
+    vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { bg='NONE', fg=Preferences.designSystem.palette.blue})
+    vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { link='CmpItemKindFunction' })
+    -- Variable
+    vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { bg='NONE', fg='white' })
+end
+
 
 function _apply_custom_theme()
     Editor()
@@ -189,6 +205,7 @@ function _apply_custom_theme()
     GalaxyLine()
     GitSigns()
     LSPColoursBreakingChange()
+    CompletionColours()
 end
 
 -- https://github.com/norcalli/nvim_utils/blob/master/lua/nvim_utils.lua#L554-L567

@@ -2,14 +2,15 @@ local duped_on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
     client.server_capabilities.documentFormattingProvider = false
-    require("lsp_signature").on_attach({
-        hint_enable = true,
-        hint_prefix = ' ',
-        max_width = 60,
-        hi_parametr= "Statement",
-        floating_window = Preferences.displayFloatingSignatures,
+    -- Trialing the usage of `hrsh7th/cmp-nvim-lsp-signature-help` instead of lsp_signature
+    -- require("lsp_signature").on_attach({
+    --     hint_enable = true,
+    --     hint_prefix = ' ',
+    --     max_width = 60,
+    --     hi_parametr= "Statement",
+    --     -- floating_window = Preferences.displayFloatingSignatures,
 
-    })
+    -- })
 
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
