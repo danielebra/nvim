@@ -40,6 +40,7 @@ return require("packer").startup(function(use)
     use "wbthomason/packer.nvim" -- Package manager
     use "kyazdani42/nvim-web-devicons" -- Icons used for tree and others
     use "kyazdani42/nvim-tree.lua" -- File explorer
+    -- NOTE: If treesitter objects have failed after update, run :TSUpdate
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {'nvim-treesitter/nvim-treesitter-textobjects'}
     use "romgrk/barbar.nvim" -- Buffer bar
