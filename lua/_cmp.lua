@@ -57,13 +57,13 @@ cmp.setup({
         -- Kind icons
         vim_item.kind = string.format('%s %s', completion_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
         -- Source
-        vim_item.menu = ({
-          buffer = "[Buffer]",
-          nvim_lsp = "[LSP]",
-          luasnip = "[LuaSnip]",
-          nvim_lua = "[Lua]",
-          latex_symbols = "[LaTeX]",
-        })[entry.source.name]
+        -- vim_item.menu = ({
+        --   buffer = "[Buffer]",
+        --   nvim_lsp = "[LSP]",
+        --   luasnip = "[LuaSnip]",
+        --   nvim_lua = "[Lua]",
+        --   latex_symbols = "[LaTeX]",
+        -- })[entry.source.name]
         return vim_item
       end
     },
@@ -71,7 +71,18 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.
-    { name = 'buffer' },
+    { 
+      name = 'buffer',
+      option = {
+        get_bufnrs = function()
+          local bufs = {}
+          for _, win in ipairs(vim.api.nvim_list_wins()) do
+            bufs[vim.api.nvim_win_get_buf(win)] = true
+          end
+          return vim.tbl_keys(bufs)
+        end
+      }
+    },
     { name = 'nvim_lsp_signature_help' },
     { name = 'async_path' },
     { name = 'calc' }
