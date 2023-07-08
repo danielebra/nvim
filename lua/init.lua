@@ -26,3 +26,4 @@ require("auto_session")
 
 require('_mason')
 -- require('language_servers')
+require('_trouble')

@@ -20,7 +20,13 @@ Preferences = {
           highlightDuration = 250,
           useReverse = true, -- Background of highlighted region will be reversed when true, or yellow when false
         },
-        linkTreesitterGroups = false -- For backwards compatibality with neovim 0.7. In 0.8, treesitter has breaking changes. Enable this to link old highlight groups to their new names
+        linkTreesitterGroups = false, -- For backwards compatibality with neovim 0.7. In 0.8, treesitter has breaking changes. Enable this to link old highlight groups to their new names
+        icons = {
+            error = "",
+            warning = "",
+            info = "",
+            hint = ""
+        }
     },
     enableSumnekoLuaLanguageServer = false, -- Provided by sumneko, requires submodule init for dependencies
     insertModeLSPDiagnostics = true, -- Display LSP diagnotic feedback while in insert mode
