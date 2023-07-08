@@ -153,6 +153,9 @@ local function LSPColoursBreakingChange()
     vim.api.nvim_command("hi @constant.builtin guifg=" .. Preferences.designSystem.palette.lightBlue)
 
     vim.api.nvim_command("hi @variable guifg=white")
+
+    -- typescript language server marks everything as Identifier
+    vim.api.nvim_command("hi Identifier guifg=white")
 end
 
 local function BarBar()
