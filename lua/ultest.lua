@@ -16,9 +16,13 @@ require("neotest").setup({
       skipped = "-",
       unknown = "?"
     },
+    quickfix = {
+      enabled = false
+    },
   adapters = {
     require("neotest-python")({
       dap = { justMyCode = false },
+      args = { "--reuse-db", "--disable-pytest-warnings" },
     }),
   },
 })
