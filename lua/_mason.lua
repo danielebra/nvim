@@ -1,3 +1,4 @@
+local navic = require("nvim-navic")
 local duped_on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -12,6 +13,10 @@ local duped_on_attach = function(client, bufnr)
 
     -- })
 
+    --
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 

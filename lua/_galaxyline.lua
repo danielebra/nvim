@@ -1,5 +1,5 @@
 local gl = require('galaxyline')
-local gps = require('nvim-gps')
+local gps = require("nvim-navic")
 -- get my theme in gaaxyline repo
 -- local colors = require('galaxyline.theme').default
 local colors = {
@@ -230,7 +230,7 @@ table.insert(gls.right, {
 })
 
 table.insert(gls.mid, {
-    nvimGPS = {
+    nvimNavic = {
         provider = function()
             return gps.get_location()
         end,
