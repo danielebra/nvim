@@ -25,7 +25,8 @@ Preferences = {
             error = "",
             warning = "",
             info = "",
-            hint = ""
+            hint = "",
+            docker = ""
         }
     },
     enableSumnekoLuaLanguageServer = false, -- Provided by sumneko, requires submodule init for dependencies

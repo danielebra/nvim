@@ -38,8 +38,8 @@ vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when th
 -- Specify require_plugin("package") to have it loaded into session.
 return require("packer").startup(function(use)
     use "wbthomason/packer.nvim" -- Package manager
-    use "kyazdani42/nvim-web-devicons" -- Icons used for tree and others
-    use "kyazdani42/nvim-tree.lua" -- File explorer
+    use {"nvim-tree/nvim-web-devicons", tag = "nerd-v2-compat"} -- Icons used for tree and others
+    use "nvim-tree/nvim-tree.lua" -- File explorer
     -- NOTE: If treesitter objects have failed after update, run :TSUpdate
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {'nvim-treesitter/nvim-treesitter-textobjects'}

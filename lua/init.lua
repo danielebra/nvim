@@ -1,6 +1,7 @@
 require('preferences')
 require('plugins')
 require('settings')
+require('dev-icons')
 require('file_tree')
 require('treesitter')
 require('treesitter_textobjects')
