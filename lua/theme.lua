@@ -68,8 +68,11 @@ local function TypescriptColours()
 
     -- const
     vim.api.nvim_command('hi typescriptStorageClass guifg=' .. Preferences.designSystem.palette.purple)
+    vim.api.nvim_command('hi typescriptVariable guifg=' .. Preferences.designSystem.palette.purple)
     -- => this also is impacting ===, maybe disable it?
     vim.api.nvim_command('hi typescriptOpSymbols guifg=' .. Preferences.designSystem.palette.purple)
+    vim.api.nvim_command('hi typescriptBinaryOp guifg=' .. Preferences.designSystem.palette.purple)
+
 end
 
 local function PythonColours()

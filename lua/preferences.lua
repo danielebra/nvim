@@ -37,7 +37,7 @@ Preferences = {
         enableFlake8 = true, -- This provides linter/format feedback to diagnostic system
         extraPaths = {}, -- This is used by pyright (lsp) to compute additional python paths
         enableMypy = true, -- This provides linter/format feedback to diagnostic system
-        enableRuff = true, -- Fast python linting and formatting with ruff (Rust tool)
+        enableRuff = false, -- Fast python linting and formatting with ruff (Rust tool)
     },
     git = {
         showInlineBlame = true,

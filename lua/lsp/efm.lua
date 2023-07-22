@@ -53,6 +53,7 @@ local hclformat = {
 }
 
 local terraform = {
+    -- formatCommand = "TerraformFmt",
     formatCommand = "terraform fmt -",
     formatStdin = true
 }
@@ -83,4 +84,4 @@ require"lspconfig".efm.setup {
     }
 }
 -- Autoformat terraform on save
-vim.cmd [[autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[autocmd BufWritePre *.tf lua vim.lsp.buf.format { asnc = true }]]
