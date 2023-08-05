@@ -40,7 +40,6 @@ return require("packer").startup(function(use)
     use "wbthomason/packer.nvim" -- Package manager
     use {"nvim-tree/nvim-web-devicons", tag = "nerd-v2-compat"} -- Icons used for tree and others
     use "nvim-tree/nvim-tree.lua" -- File explorer
-    use "kyazdani42/nvim-tree.lua" -- File explorer
     -- NOTE: If treesitter objects have failed after update, run :TSUpdate
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {'nvim-treesitter/nvim-treesitter-textobjects'}
@@ -102,6 +101,9 @@ return require("packer").startup(function(use)
     use {"nvim-treesitter/playground"} -- Insights into treesitter
 
     use {"williamboman/mason.nvim", 'williamboman/mason-lspconfig.nvim' } -- LSP management
+
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- Debugger
+    use { "mfussenegger/nvim-dap-python" }
 
 end)
 
