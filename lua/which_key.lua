@@ -56,6 +56,7 @@ local mappings = {
     ["g"] = "Git",
     ["d"] = "Delete buffer",
     ["c"] = "Close split",
+    ["C"] = {"<cmd>%bd!<cr>", "Clear session"},
     ["-"] = "Split below",
     ["|"] = "Split right",
     ["r"] = "Rename",
