@@ -101,7 +101,16 @@ local mappings = {
     y = {
         name = "Yank",
         p = {"<cmd>lua require('nvim-tree.api').tree.focus()<CR><cmd>lua require('nvim-tree.api').fs.copy.absolute_path()<CR><cmd>wincmd p<CR>","Path to file"}
-
+    },
+    d = {
+        name = "Debugger",
+        c = {"<cmd>DapContinue<cr>","Continue"},
+        b = {"<cmd>DapToggleBreakpoint<cr>","Breakpoint"},
+        n = {"<cmd>DapStepOver<cr>","Step next"},
+        i = {"<cmd>DapStepInto<cr>","Step into"},
+        o = {"<cmd>DapStepOut<cr>","Step out"},
+        t = {"<cmd>lua require('neotest').run.run({strategy= 'dap'})<cr>","Debug nearest test"},
+        q = {"<cmd>DapTerminate<cr>","Quit debug session"}
     }
 
 }
@@ -124,7 +133,7 @@ vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {noremap = 
 vim.api.nvim_set_keymap("n", "<leader>|", "<cmd>vsplit<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>-", "<cmd>split<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>BufferDelete<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>D", "<cmd>BufferDelete<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>close<CR>", {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>BufferClose<CR>", {noremap = true, silent = true})
 
