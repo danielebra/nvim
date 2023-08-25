@@ -54,6 +54,7 @@ return require("packer").startup(function(use)
         {"hrsh7th/cmp-path"},
         {"hrsh7th/cmp-cmdline"},
         {"hrsh7th/cmp-calc"},
+        {"rcarriga/cmp-dap"},
         {"hrsh7th/cmp-nvim-lsp-signature-help"},
         {"FelipeLema/cmp-async-path"},
     }} -- Autocomplete
