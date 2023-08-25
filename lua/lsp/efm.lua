@@ -3,7 +3,8 @@ local python_options = {} -- We will build this based on the user defined Prefer
 local flake8 = {
     LintCommand = "flake8 --max-line-length=100 --stdin-display-name ${INPUT} -",
     lintStdin = true,
-    lintFormats = {"%f:%l:%c: %m"}
+    lintFormats = {"%f:%l:%c: %m"},
+    rootMarkers = {"pyproject.toml"}
 }
 local mypy = {
     lintCommand = "mypy --show-column-numbers",
@@ -16,8 +17,8 @@ local mypy = {
     --     "%f:%l:%c: %tote: %m",
     -- }
 }
-local black = {formatCommand = "black --quiet --line-length 100 -", formatStdin = true}
-local isort = {formatCommand = "isort --quiet -", formatStdin = true}
+local black = {formatCommand = "black --quiet -", formatStdin = true, rootMarkers = {"pyproject.toml"}}
+local isort = {formatCommand = "isort --quiet -", formatStdin = true, rootMarkers = {"pyproject.toml"}}
 
 local ruff = {
     lintCommand = "ruff --quiet ${INPUT}",
