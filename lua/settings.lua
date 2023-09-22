@@ -49,3 +49,4 @@ vim.cmd('set showbreak=↳')
 vim.cmd('let g:material_theme_style = "darker"')
 vim.cmd('colorscheme material')
 
+vim.opt.swapfile = false  -- Disable swap files because we have undo history
