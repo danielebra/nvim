@@ -106,5 +106,7 @@ return require("packer").startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- Debugger
     use { "mfussenegger/nvim-dap-python" }
 
+    use "pwntester/octo.nvim" -- Github
+
 end)
 
