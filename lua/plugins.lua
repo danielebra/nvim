@@ -79,7 +79,6 @@ return require("packer").startup(function(use)
 
     use "NTBBloodbath/galaxyline.nvim" -- Bottom line # Galxyline fork due to breaking changes in v0.6.1 (author MIA)
     -- use "glepnir/galaxyline.nvim" -- Bottom line
-    -- use "ahmedkhalf/lsp-rooter.nvim" -- Use LSP to switch to root of project
     use "norcalli/nvim-colorizer.lua" -- Colours for RGB etc
     use "tpope/vim-surround" -- Control surrounding symbols
     use "tpope/vim-sleuth" -- Tabwidth detection
