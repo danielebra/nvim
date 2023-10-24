@@ -14,7 +14,6 @@ require('_gitsigns')
 require('_galaxyline')
 require('_colorizer')
 require('nvim_gps')
--- require('comments')
 
 require('cosmic')
 require('notifications')
