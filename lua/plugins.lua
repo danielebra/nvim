@@ -79,7 +79,6 @@ return require("packer").startup(function(use)
 
     use "NTBBloodbath/galaxyline.nvim" -- Bottom line # Galxyline fork due to breaking changes in v0.6.1 (author MIA)
     -- use "glepnir/galaxyline.nvim" -- Bottom line
-    -- use "ahmedkhalf/lsp-rooter.nvim" -- Use LSP to switch to root of project
     use "norcalli/nvim-colorizer.lua" -- Colours for RGB etc
     use "tpope/vim-surround" -- Control surrounding symbols
     use "tpope/vim-sleuth" -- Tabwidth detection
@@ -94,8 +93,6 @@ return require("packer").startup(function(use)
 
     use {"rcarriga/nvim-notify"} -- Notification UI
     use {"p00f/nvim-ts-rainbow"} -- Rainbow brackets
-
-    -- use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" } -- Run tests (No longer maintained, reccomended to use neotest)
 
     use { "nvim-neotest/neotest", requires = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter", "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-python" } } -- Run tests
 
