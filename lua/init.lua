@@ -26,7 +26,6 @@ require('ultest')
 require("auto_session")
 
 require('_mason')
--- require('language_servers')
 require('_trouble')
 require('plugin_configs.debugger')
 require('plugin_configs.octo')
