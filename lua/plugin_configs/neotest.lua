@@ -1,5 +1,3 @@
--- vim.g.ultest_running_sign = "羽"
--- TODO: notifications
 require("neotest").setup({
   icons = {
       child_indent = "│",

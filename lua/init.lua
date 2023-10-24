@@ -20,7 +20,7 @@ require('cosmic')
 require('notifications')
 
 require('theme')
-require('ultest')
+require('plugin_configs.neotest')
 
 require("auto_session")
 
