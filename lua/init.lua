@@ -22,7 +22,7 @@ require('plugin_configs.neotest')
 
 require("plugin_configs.auto_session")
 
-require('_mason')
+require('plugin_configs.mason')
 require('plugin_configs.trouble')
 require('plugin_configs.debugger')
 require('plugin_configs.octo')
