@@ -74,9 +74,13 @@ require('telescope').setup {
             override_file_sorter = true, -- override the file sorter
             case_mode = "smart_case" -- or "ignore_case" or "respect_case"
             -- the default case_mode is "smart_case"
+        },
+        live_grep_args = {
+            auto_quoting = false,
         }
     }
 }
 
 -- require('telescope').load_extension('project')
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('live_grep_args')

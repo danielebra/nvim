@@ -69,6 +69,7 @@ local mappings = {
         c = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
         f = {"<cmd>Telescope find_files<cr>", "Files"},
         t = {"<cmd>Telescope live_grep<cr>", "Text"},
+        T = {"<cmd>Telescope live_grep_args<CR>-g !**/*test* ", "Text without tests"},
         h = {"<cmd>Telescope help_tags<cr>", "Help"},
         m = {"<cmd>Telescope marks<cr>", "Marks"},
         M = {"<cmd>Telescope man_pages<cr>", "Man pages"},
@@ -76,7 +77,8 @@ local mappings = {
         q = {"<cmd>Telescope quickfix<cr>", "Quickfix list"},
         ["."] = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "This buffer"},
         b = {"<cmd>Telescope buffers<cr>", "Buffers"},
-        v = {"<cmd>Telescope vim_options<cr>", "Vim options"}
+        v = {"<cmd>Telescope vim_options<cr>", "Vim options"},
+        w = {"<cmd>lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>", "Word under cursor"},
     },
     t = {
         name = "Terminal",

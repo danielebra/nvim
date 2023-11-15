@@ -66,7 +66,7 @@ return require("packer").startup(function(use)
     use {"akinsho/nvim-toggleterm.lua"} -- Terminal
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
     -- Telescope
-    use {"nvim-telescope/telescope.nvim", requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
+    use {"nvim-telescope/telescope.nvim", requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {"nvim-telescope/telescope-live-grep-args.nvim"}}}
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
     use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
     use {"nvim-telescope/telescope-project.nvim", opt = true}
