@@ -2,10 +2,9 @@ local actions = require('telescope.actions')
 local trouble = require("trouble.providers.telescope")
 -- Global remapping
 ------------------------------
--- '--color=never',
 require('telescope').setup {
     defaults = {
-        find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+        vimgrep_arguments = {'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', "--hidden"},
         -- prompt_prefix = " ",
         prompt_prefix = " ",
         -- selection_caret = " ",
@@ -67,6 +66,12 @@ require('telescope').setup {
         }
     },
     -- extensions = {fzy_native = {override_generic_sorter = false, override_file_sorter = true}}
+    pickers = {
+        find_files = {
+            find_command = { "rg", "--ignore", "--hidden", "--files"}
+        }
+
+    },
     extensions = {
         fzf = {
             fuzzy = true, -- false will only do exact matching
