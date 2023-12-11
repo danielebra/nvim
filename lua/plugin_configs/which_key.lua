@@ -162,5 +162,7 @@ vim.api.nvim_set_keymap("n", "<leader>=", "<c-w>=", {noremap = true, silent = tr
 -- Repeat in visual mode
 vim.api.nvim_set_keymap("v", ".", ":'<,'>normal .<CR>", {noremap = true, silent = true})
 
+vim.api.nvim_set_keymap('n', 'gF', ':vsp <cfile><CR>', { noremap = true, silent = true }) -- Open file under cursor in new buffer
+
 local whichKey = require("which-key")
 whichKey.register(mappings, opts)
