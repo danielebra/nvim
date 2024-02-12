@@ -43,7 +43,7 @@ require'nvim-tree'.setup {-- following options are the default
   },
   filters = {
     dotfiles = false,
-    custom = { '.git', 'node_modules', '.cache' },
+    custom = { '.git', 'node_modules' },
     exclude = { '.github' }
   },
   -- configuration options for the system open command (`s` in the tree by default)
