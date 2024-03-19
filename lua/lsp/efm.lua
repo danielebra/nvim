@@ -84,5 +84,5 @@ require"lspconfig".efm.setup {
         }
     }
 }
--- Autoformat terraform on save
-vim.cmd [[autocmd BufWritePre *.tf lua vim.lsp.buf.format { asnc = true }]]
+-- Autoformat terraform & javascript on save
+vim.cmd [[autocmd BufWritePre *.tf,*.js lua vim.lsp.buf.format { async = true }]]
