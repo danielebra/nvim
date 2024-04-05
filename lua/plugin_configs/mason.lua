@@ -87,6 +87,37 @@ require("mason-lspconfig").setup_handlers {
                 }
         }
     }
+    end,
+
+    ["yamlls"] = function ()
+        nvim_lsp.yamlls.setup {
+            on_attach = duped_on_attach,
+            filetypes = { "yaml", "yaml.cloudformation" },
+            settings = {
+                yaml = {
+                    customTags = {
+                        "!fn",
+                        "!And",
+                        "!If",
+                        "!Not",
+                        "!Equals",
+                        "!Or",
+                        "!FindInMap sequence",
+                        "!Base64",
+                        "!Cidr",
+                        "!Ref",
+                        "!Ref Scalar",
+                        "!Sub",
+                        "!GetAtt",
+                        "!GetAZs",
+                        "!ImportValue",
+                        "!Select",
+                        "!Split",
+                        "!Join sequence"
+                    }
+            }
+        }
+    }
     end
 }
 
