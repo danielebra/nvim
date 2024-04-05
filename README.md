@@ -55,3 +55,9 @@ yarn global add pyright \
     dockerfile-language-server-nodejs \
     diagnostic-languageserver
 ```
+
+Cloudformation
+
+``` sh
+pipx install cfn-lsp-extra
+```
