@@ -89,6 +89,7 @@ require("mason-lspconfig").setup_handlers {
     }
     end,
 
+    -- yaml
     ["yamlls"] = function ()
         nvim_lsp.yamlls.setup {
             on_attach = duped_on_attach,
@@ -123,3 +124,4 @@ require("mason-lspconfig").setup_handlers {
 
 require("lsp.lua")
 require("lsp.efm")
+require("lsp.cloudformation")

@@ -85,7 +85,7 @@ require"lspconfig".efm.setup {
             css = {prettier},
             json = {prettier},
             yaml = {prettier},
-            ["yaml.cloudformation"] = {cloudformation},
+            -- ["yaml.cloudformation"] = {cloudformation},
             hcl = {hclformat},
             terraform = {terraform},
         }
