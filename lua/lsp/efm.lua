@@ -59,10 +59,16 @@ local terraform = {
     formatStdin = true
 }
 
+local cloudformation = {
+    lintCommand = "cfn-lint --format=parseable -",
+    lintStdin = true,
+    lintIgnoreExitCode = true,
+}
+
 require"lspconfig".efm.setup {
     filetypes = {
         "lua", "python", "javascriptreact", "javascript", "typescript", "typescriptreact", "sh", "html", "css", "json",
-        "yaml", "markdown", "hcl", "terraform"
+        "yaml", "markdown", "hcl", "terraform", "yaml.cloudformation"
     },
     init_options = {documentFormatting = true},
     settings = {
@@ -79,6 +85,7 @@ require"lspconfig".efm.setup {
             css = {prettier},
             json = {prettier},
             yaml = {prettier},
+            ["yaml.cloudformation"] = {cloudformation},
             hcl = {hclformat},
             terraform = {terraform},
         }
