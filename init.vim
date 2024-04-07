@@ -10,6 +10,9 @@ let g:loaded_python_provider = 0 " Disable python2
 " disable autocomplete match info at bottom of screen
 set shortmess+=c
 
+" Disable copilot by default
+let g:copilot_enabled = v:false
+
 " Source project rc files
 if filereadable(".project.vimrc")
     so .project.vimrc
