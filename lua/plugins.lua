@@ -104,6 +104,7 @@ return require("packer").startup(function(use)
     use { "mfussenegger/nvim-dap-python" }
 
     use "pwntester/octo.nvim" -- Github
+    use "sindrets/diffview.nvim"  -- Diff
 
 end)
 

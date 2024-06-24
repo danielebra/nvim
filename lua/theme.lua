@@ -182,6 +182,15 @@ local function GitSigns()
     vim.api.nvim_command('hi GitSignsCurrentLineBlame guifg=#545454 guibg=' ..  '#14161c')
 end
 
+local function DiffPassThrough()
+    -- Allow text colour pass through for highlight groups
+    vim.api.nvim_command("hi DiffAdd guifg=NONE")
+    vim.api.nvim_command("hi DiffChange guifg=NONE")
+    vim.api.nvim_command("hi DiffText guifg=NONE")
+    vim.api.nvim_command("hi DiffDelete guifg=NONE")
+
+end
+
 local function CompletionColours() 
     -- Searching/Completion menu
     vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg='NONE', fg='#BB80B3' })
@@ -212,6 +221,7 @@ function _apply_custom_theme()
     GitSigns()
     LSPColoursBreakingChange()
     CompletionColours()
+    DiffPassThrough()
 end
 
 -- https://github.com/norcalli/nvim_utils/blob/master/lua/nvim_utils.lua#L554-L567
