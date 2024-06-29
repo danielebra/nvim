@@ -79,6 +79,7 @@ local mappings = {
         b = {"<cmd>Telescope buffers<cr>", "Buffers"},
         v = {"<cmd>Telescope vim_options<cr>", "Vim options"},
         w = {"<cmd>lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>", "Word under cursor"},
+        W = {"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args({ default_text = '-g !**/*test* ' .. vim.fn.expand('<cword>') })<cr>", "Word under cursor excluding tests"},
     },
     t = {
         name = "Terminal",
