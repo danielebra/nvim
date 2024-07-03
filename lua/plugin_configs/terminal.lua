@@ -1,3 +1,7 @@
+require("toggleterm").setup{
+  shadeTerminals = false  -- Disable shading feature as it janks out on transparent backgrounds
+}
+
 local Terminal  = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({
     cmd = "lazygit",
