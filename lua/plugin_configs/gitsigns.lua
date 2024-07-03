@@ -2,11 +2,21 @@
 require('gitsigns').setup {
     signs = {
       add          = { text = '' },
+      untracked    = { text = '' },
       change       = { text = 'ﰣ'},
       delete       = { text = ''},
       topdelete    = { text = ''},
       changedelete = { text = ''},
     },
+    signs_staged = {
+      add          = { text = '' },
+      untracked    = { text = '' },
+      change       = { text = 'ﰣ'},
+      delete       = { text = ''},
+      topdelete    = { text = ''},
+      changedelete = { text = ''},
+    },
+    signs_staged_enable = false,
     numhl = false,
     linehl = false,
     -- keymaps = {
@@ -26,7 +36,7 @@ require('gitsigns').setup {
       delay = Preferences.git.inlineBlameDelay,
       ignore_whitespace = false,
     },
-
-    update_debounce = 200,
+    signs_staged_enabled = Preferences.displayGitSignsWhenStaged,
+    update_debounce = 350,
     status_formatter = nil, -- Use default
   }
