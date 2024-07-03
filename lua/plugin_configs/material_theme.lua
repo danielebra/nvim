@@ -12,17 +12,20 @@ material.setup{
       colors.syntax.operator = Preferences.designSystem.palette.lightBlue
       -- Not sure
       colors.syntax.value = Preferences.designSystem.palette.darkGray  -- Numbers?
-      -- Experimenting
-      colors.syntax.field = "red"
-      -- Known TODOs:
-      -- class/def/self/if/else is cyan but should be purple
-      --
       -- Good to know, but we use the default
       -- colors.syntax.fn -- Function names
     end,
     custom_highlights = {
       LineNr = { fg = Preferences.designSystem.palette.purple },  -- Line Numbers
-      CursorLineNr = { fg = Preferences.designSystem.palette.magenta }  -- Focused Line
+      CursorLineNr = { fg = Preferences.designSystem.palette.magenta },  -- Focused Line
+      ["@keyword"] = { fg = Preferences.designSystem.palette.purple },  -- `class`, `self` keywords
+      ["@keyword.return"] = { fg = Preferences.designSystem.palette.lightBlue },  -- `return` statement
+      ["@keyword.operator"] = { fg = Preferences.designSystem.palette.lightBlue },  -- `in`
+      ["@variable.builtin"] = { fg = Preferences.designSystem.palette.yellow },  -- `self`
+      ["@function.builtin"] = { fg = Preferences.designSystem.palette.lightBlue},  -- `super()`
+      ["@constructor"] = { fg = Preferences.designSystem.palette.yellow},  -- `xx.yy.Foo()`
+      ["@Boolean"] = { fg = Preferences.designSystem.palette.maroon},  -- `xx.yy.Foo()` changes colour of Foo
+      ["@variable.member"] = { fg = "white" }  -- `xx.yy` changes colour of yy
     }
 }
 vim.cmd("colorscheme material-darker")
