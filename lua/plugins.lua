@@ -59,7 +59,6 @@ return require("packer").startup(function(use)
         {"FelipeLema/cmp-async-path"},
     }} -- Autocomplete
 
-    use {"kaicataldo/material.vim", branch = 'main'}
     -- use {"kaicataldo/material.vim", branch = 'main'} -- vim
     use {"marko-cerovac/material.nvim"}
     use {"folke/trouble.nvim"} -- Pretty diagnostics
