@@ -60,6 +60,8 @@ return require("packer").startup(function(use)
     }} -- Autocomplete
 
     use {"kaicataldo/material.vim", branch = 'main'}
+    -- use {"kaicataldo/material.vim", branch = 'main'} -- vim
+    use {"marko-cerovac/material.nvim"}
     use {"folke/trouble.nvim"} -- Pretty diagnostics
     use {"folke/which-key.nvim"} -- Hotkey cheat sheet
     use {"christoomey/vim-tmux-navigator"} -- Move between splits and tmux panes

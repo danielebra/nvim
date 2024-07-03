@@ -17,7 +17,9 @@ require('plugin_configs.navic')
 require('plugin_configs.cosmic')
 require('plugin_configs.notifications')
 
-require('theme')
+-- require('theme')
+require('plugin_configs.material_theme')
+
 require('plugin_configs.neotest')
 
 require("plugin_configs.auto_session")

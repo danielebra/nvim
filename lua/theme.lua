@@ -116,7 +116,9 @@ local function LSPColours()
     vim.api.nvim_command("hi TSConditional guifg=" .. Preferences.designSystem.palette.lightBlue)
     vim.api.nvim_command("hi TSFunctionBuiltin gui=italic guifg=" .. Preferences.designSystem.palette.orange)
     vim.api.nvim_command("hi TSInclude gui=italic guifg=" .. Preferences.designSystem.palette.lightBlue)
+end
 
+local function Diagnostics()
     -- Errors (match galaxy line - which is not in design system)
     vim.api.nvim_command("hi DiagnosticError guifg=#F44747")
     vim.api.nvim_command("hi LspDiagnosticsDefaultError guifg=#F44747")
@@ -209,17 +211,18 @@ end
 
 
 function _apply_custom_theme()
-    Editor()
-    if Preferences.designSystem.enableTransparency == true then TransparentBackground() end
-    SemshiColours()
-    SharedColours()
-    TypescriptColours()
-    PythonColours()
-    LSPColours()
+    -- Editor()
+    -- if Preferences.designSystem.enableTransparency == true then TransparentBackground() end
+    -- SemshiColours()
+    -- SharedColours()
+    -- TypescriptColours()
+    -- PythonColours()
+    -- LSPColours()
+    Diagnostics()
     BarBar()
     GalaxyLine()
     GitSigns()
-    LSPColoursBreakingChange()
+    -- LSPColoursBreakingChange()
     CompletionColours()
     DiffPassThrough()
 end
