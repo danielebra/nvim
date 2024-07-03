@@ -180,6 +180,17 @@ end
 
 local function GitSigns()
     vim.api.nvim_command('hi GitSignsCurrentLineBlame guifg=#545454 guibg=' ..  '#14161c')
+    -- Can perhaps go to another function about file tree
+    -- Has changes
+    vim.api.nvim_command('hi NvimTreeGitDirtyIcon guifg=' .. Preferences.designSystem.palette.yellow)
+    -- Contains deleted file
+    vim.api.nvim_command('hi NvimTreeGitDeletedIcon guifg=#F44747')
+    -- Is new
+    vim.api.nvim_command('hi NvimTreeGitNewIcon guifg=' .. Preferences.designSystem.palette.lightBlue)
+    -- Is staged
+    vim.api.nvim_command('hi NvimTreeGitStagedIcon guifg=' .. Preferences.designSystem.palette.green)
+    -- README.md, Makefile etc
+    vim.api.nvim_command('hi NvimTreeSpecialFile guifg=' .. Preferences.designSystem.palette.darkGray)
 end
 
 local function DiffPassThrough()
