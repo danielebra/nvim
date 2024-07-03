@@ -22,6 +22,9 @@ local function Editor()
     else
         vim.api.nvim_command("hi HighlightedyankRegion  guifg=black guibg=" .. Preferences.designSystem.palette.yellow)
     end
+
+    -- Buffer seperations
+    vim.api.nvim_command("hi WinSeparator guifg=#545454")
 end
 
 local function TransparentBackground()
