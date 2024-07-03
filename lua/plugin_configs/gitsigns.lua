@@ -36,7 +36,7 @@ require('gitsigns').setup {
       delay = Preferences.git.inlineBlameDelay,
       ignore_whitespace = false,
     },
-    signs_staged_enabled = Preferences.displayGitSignsWhenStaged,
+    signs_staged_enable = Preferences.displayGitSignsWhenStaged,
     update_debounce = 350,
     status_formatter = nil, -- Use default
   }
