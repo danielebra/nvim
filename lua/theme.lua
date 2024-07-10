@@ -19,6 +19,9 @@ local function Editor()
     -- Make the opposing bracket more visible
     vim.api.nvim_command("hi MatchParen guifg=" .. Preferences.designSystem.palette.brightGreen .. " guibg=gray")
 
+    -- Remove black background from Floating content.
+    vim.api.nvim_command("hi NormalFloat guifg=None")
+
     -- Highlighted yank
     vim.api.nvim_command("hi clear HighlightedyankRegion")
     if Preferences.designSystem.yank.useReverse == true then
