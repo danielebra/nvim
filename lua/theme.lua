@@ -12,6 +12,10 @@ local function Editor()
     vim.api.nvim_command("hi Search guifg=red guibg=#4b4b4b")
     vim.api.nvim_command("hi IncSearch guifg=red guibg=#74716fa1")
 
+    -- Restore Pre neovim 0.10 search behaviour
+    vim.api.nvim_command("hi CurSearch NONE")
+    vim.api.nvim_command("hi link CurSearch Search")
+
     -- Make the opposing bracket more visible
     vim.api.nvim_command("hi MatchParen guifg=" .. Preferences.designSystem.palette.brightGreen .. " guibg=gray")
 
