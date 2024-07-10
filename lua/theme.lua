@@ -105,6 +105,9 @@ local function PythonColours()
     vim.api.nvim_command('hi pythonInclude gui=italic guifg=' .. Preferences.designSystem.palette.lightBlue)
     vim.api.nvim_command('hi pythonConditional guifg=' .. Preferences.designSystem.palette.lightBlue)
     vim.api.nvim_command("hi pythonDecoratorName guifg=" .. Preferences.designSystem.palette.blue)
+
+    -- Make built ins yellow, such as ImportError
+    vim.api.nvim_command("hi @type.builtin.python guifg=" .. Preferences.designSystem.palette.yellow)
 end
 
 local function LSPColours()
