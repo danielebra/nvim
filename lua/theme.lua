@@ -20,7 +20,7 @@ local function Editor()
     vim.api.nvim_command("hi MatchParen guifg=" .. Preferences.designSystem.palette.brightGreen .. " guibg=gray")
 
     -- Remove black background from Floating content.
-    vim.api.nvim_command("hi NormalFloat guifg=None")
+    vim.api.nvim_command("hi NormalFloat guibg=None")
 
     -- Highlighted yank
     vim.api.nvim_command("hi clear HighlightedyankRegion")
