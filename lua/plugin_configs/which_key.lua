@@ -88,8 +88,8 @@ local mappings = {
     },
     o = {
         name = "Open",
-        d = {"<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics"},
-        q = {"<cmd>TroubleToggle quickfix<cr>", "Quickfix list"}
+        d = {"<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Document diagnostics"},
+        q = {"<cmd>Trouble qflist toggle<cr>", "Quickfix list"}
     },
     h = {
         name = "Hunk",
