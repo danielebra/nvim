@@ -62,6 +62,7 @@ local function SharedColours()
     vim.api.nvim_command("hi String guifg=" .. Preferences.designSystem.palette.green)
     -- Make comments more visible
     vim.api.nvim_command("hi Comment guifg=" .. Preferences.designSystem.palette.lightGray)
+    vim.api.nvim_command("hi @comment guifg=" .. Preferences.designSystem.palette.lightGray)
 
 end
 
@@ -147,6 +148,7 @@ local function LSPColoursBreakingChange()
     vim.api.nvim_command("hi function.builtin gui=italic guifg=" .. Preferences.designSystem.palette.orange)
 
     vim.api.nvim_command("hi constant gui=bold guifg=" .. Preferences.designSystem.palette.darkGray)
+    vim.api.nvim_command("hi @constant.python gui=bold guifg=" .. Preferences.designSystem.palette.darkGray)
 
     vim.api.nvim_command("hi @Constructor guifg=" .. Preferences.designSystem.palette.yellow)
 
