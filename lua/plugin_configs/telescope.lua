@@ -15,7 +15,7 @@ require('telescope').setup {
         sorting_strategy = "ascending",
         layout_strategy = "horizontal",
         -- file_sorter = require'telescope.sorters'.get_fzy_sorter,
-        file_ignore_patterns = {"**/*.sql"},
+        file_ignore_patterns = {"**/*.sql", ".git/"},
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
         path_display = {"absolute"}, -- add shorten here if required
         layout_config = {
