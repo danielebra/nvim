@@ -45,6 +45,46 @@ local opts = {
     nowait = false, -- use `nowait` when creating keymaps
 }
 
+local mappingsV3 = {
+    -- TOP LEVEL
+    {"<leader>a", '<cmd>lua require("cosmic-ui").code_actions()<cr>', desc="Actions"},
+    {"<leader>q", '<cmd>qa<cr>', desc="Quit all"},
+    {"<leader>Q", '<cmd>Q<cr>', desc="Quit"},
+    {"<leader>w", '<cmd>w<cr>', desc="Write"},
+    {"<leader>W", '<cmd>noa w<cr>', desc="Write (no auto cmd)"},
+    {"<leader>e", '<cmd>NvimTreeToggle<cr>', desc="Explore"},
+    -- Lazygit toggle is defined in terminal.lua
+    {"<leader>g", '<cmd>lua _lazygit_toggle()<cr>', desc="Git"},
+    {"<leader>D", '<cmd>BufferDelete<cr>', desc="Delete Buffer"},
+    {"<leader>c", '<cmd>close<cr>', desc="Close split"},
+    {"<leader>C", '<cmd>%bd!<cr>', desc="Clear session"},
+    {"<leader>|", '<cmd>vsplit<cr>', desc="Split right"},
+    {"<leader>-", '<cmd>split<cr>', desc="Split below"},
+    {"<leader>r", desc="Rename"},
+    {"<leader>f", '<cmd>lua vim.lsp.buf.format({async = true})<CR>', desc="Format buffer"},
+    {"<leader>=", '<c-w>=', desc="Balance windows"},
+    {"<leader><ESC>", '<cmd>nohl<cr>', desc="No highlight"},
+    {"<leader>T", '<cmd>lua require("neotest").run.run()<cr>', desc="Test"},
+    {"<leader>z", '<cmd>tab split<cr>', desc="Zen"},
+    -- SEARCH
+    {"<leader>s", group="Search"},
+    {"<leader>sc", '<cmd>Telescope git_branches<cr>', desc="Checkout branch"},
+    {"<leader>sf", "<cmd>Telescope find_files<cr>", desc="Files"},
+    {"<leader>st", "<cmd>Telescope live_grep<cr>", desc="Text"},
+    {"<leader>sT", "<cmd>Telescope live_grep_args<CR>-g !**/*test* ", desc="Text without tests"},
+    {"<leader>sh", "<cmd>Telescope help_tags<cr>", desc="Help"},
+    {"<leader>sm", "<cmd>Telescope marks<cr>", desc="Marks"},
+    {"<leader>sM", "<cmd>Telescope man_pages<cr>", desc="Man pages"},
+    {"<leader>sr", "<cmd>Telescope registers<cr>", desc="Registers"},
+    {"<leader>sq", "<cmd>Telescope quickfix<cr>", desc="Quickfix list"},
+    {"<leader>s.", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc="This buffer"},
+    {"<leader>sb", "<cmd>Telescope buffers<cr>", desc="Buffers"},
+    {"<leader>sv", "<cmd>Telescope vim_options<cr>", desc="Vim options"},
+    {"<leader>sw", "<cmd>lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>", desc="Word under cursor"},
+    {"<leader>sW", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args({ default_text = '-g !**/*test* ' .. vim.fn.expand('<cword>') })<cr>", desc="Word under cursor excluding tests"},
+
+}
+
 local mappings = {
     ["a"] = "Actions",
     ["q"] = "Quit all",
@@ -119,28 +159,28 @@ local mappings = {
 }
 
 -- Direct leader key binds
-vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua require("cosmic-ui").code_actions()<cr>', {noremap = true, silent= true}) -- Code Actions
-vim.api.nvim_set_keymap('n', '<leader>T', '<cmd>lua require("neotest").run.run()<cr>', {noremap = true, silent= true}) -- Run nearest unit test
+-- vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua require("cosmic-ui").code_actions()<cr>', {noremap = true, silent= true}) -- Code Actions
+-- vim.api.nvim_set_keymap('n', '<leader>T', '<cmd>lua require("neotest").run.run()<cr>', {noremap = true, silent= true}) -- Run nearest unit test
 
 -- Lazygit toggle is defined in terminal.lua
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<leader><ESC>", "<cmd>nohl<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader><ESC>", "<cmd>nohl<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>qa<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>Q", "<cmd>q<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>W", "<cmd>noa w<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>qa<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>Q", "<cmd>q<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>W", "<cmd>noa w<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<leader>|", "<cmd>vsplit<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>-", "<cmd>split<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>|", "<cmd>vsplit<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>-", "<cmd>split<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<leader>D", "<cmd>BufferDelete<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>close<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>D", "<cmd>BufferDelete<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>close<CR>", {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>BufferClose<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>tab split<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>tab split<CR>", {noremap = true, silent = true})
 
 -- Other keybinds
 
@@ -156,9 +196,9 @@ vim.api.nvim_set_keymap("n", "<Up>", "<cmd>resize +2<CR>", {noremap = true, sile
 vim.api.nvim_set_keymap("n", "<Left>", "<cmd>vertical resize -2<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Right>", "<cmd>vertical resize +2<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<leader>=", "<c-w>=", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>=", "<c-w>=", {noremap = true, silent = true})
 
 -- Repeat in visual mode
 vim.api.nvim_set_keymap("v", ".", ":'<,'>normal .<CR>", {noremap = true, silent = true})
@@ -166,4 +206,5 @@ vim.api.nvim_set_keymap("v", ".", ":'<,'>normal .<CR>", {noremap = true, silent 
 vim.api.nvim_set_keymap('n', 'gF', ':vsp <cfile><CR>', { noremap = true, silent = true }) -- Open file under cursor in new buffer
 
 local whichKey = require("which-key")
-whichKey.register(mappings, opts)
+-- whichKey.register(mappings, opts)
+whichKey.add(mappingsV3)
