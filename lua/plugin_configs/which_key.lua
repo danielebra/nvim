@@ -82,6 +82,34 @@ local mappingsV3 = {
     {"<leader>sv", "<cmd>Telescope vim_options<cr>", desc="Vim options"},
     {"<leader>sw", "<cmd>lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>", desc="Word under cursor"},
     {"<leader>sW", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args({ default_text = '-g !**/*test* ' .. vim.fn.expand('<cword>') })<cr>", desc="Word under cursor excluding tests"},
+    -- TERMINAL
+    {"<leader>t", group="Terminal"},
+    {"<leader>tg", desc="Git", '<cmd>lua _lazygit_toggle()<cr>'},
+    {"<leader>td", desc="Docker", '<cmd>lua _lazydocker_toggle()<cr>'},
+    -- OPEN
+    {"<leader>o", group="Open"},
+    {"<leader>od", desc="Document diagnostics", '<cmd>Trouble diagnostics toggle filter.buf=0()<cr>'},
+    {"<leader>oq", desc="Quickfix list", '<cmd>Trouble qflist toggle<cr>'},
+    -- HUNK
+    {"<leader>h", group="Hunk"},
+    {"<leader>hn", "<cmd>Gitsigns next_hunk<cr>", desc="Next"},
+    {"<leader>hp", "<cmd>Gitsigns prev_hunk<cr>", desc="Previous"},
+    {"<leader>hP", "<cmd>Gitsigns preview_hunk<cr>", desc="Preview"},
+    {"<leader>hs", "<cmd>Gitsigns stage_hunk<cr>", desc="Stage"},
+    {"<leader>hS", "<cmd>Gitsigns stage_hunk<cr>", desc="Select"},
+    {"<leader>hu", "<cmd>Gitsigns undo_stage_hunk<cr>", desc="Undo"},
+    {"<leader>hq", "<cmd>Gitsigns setqflist<cr>", desc="Quickfix list"}
+    -- YANK
+    {"<leader>y", group="Yank"},
+    {"<leader>yp", "<cmd>lua require('nvim-tree.api').tree.focus()<CR><cmd>lua require('nvim-tree.api').fs.copy.absolute_path()<CR><cmd>wincmd p<CR>",desc="Path to file"}
+    {"<leader>d", group="Debugger"},
+    {"<leader>sc", "<cmd>DapContinue<cr>",desc="Continue"},
+    {"<leader>sb", "<cmd>DapToggleBreakpoint<cr>",desc="Breakpoint"},
+    {"<leader>sn", "<cmd>DapStepOver<cr>",desc="Step next"},
+    {"<leader>si", "<cmd>DapStepInto<cr>",desc="Step into"},
+    {"<leader>so", "<cmd>DapStepOut<cr>",desc="Step out"},
+    {"<leader>st", "<cmd>lua require('neotest').run.run({strategy= 'dap'})<cr>",desc="Debug nearest test"},
+    {"<leader>sq", "<cmd>DapTerminate<cr>",desc="Quit debug session"}
 
 }
 
