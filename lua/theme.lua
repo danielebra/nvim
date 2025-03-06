@@ -109,6 +109,8 @@ local function PythonColours()
 
     -- Make built ins yellow, such as ImportError
     vim.api.nvim_command("hi @type.builtin.python guifg=" .. Preferences.designSystem.palette.yellow)
+
+    vim.api.nvim_command("hi @module.python guifg=white")
 end
 
 local function LSPColours()
