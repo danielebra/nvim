@@ -7,8 +7,8 @@ vim.o.clipboard = "unnamedplus"
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.termguicolors = true
-vim.o.undodir = "/Users/daniel/.config/nvim/undodir" -- Persist undo history
 
+vim.o.undodir = vim.fn.expand("~/config/nvim/undodir") -- Persist undo history
 vim.o.undofile = true
 
 vim.o.pyx = 3
