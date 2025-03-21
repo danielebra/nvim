@@ -119,6 +119,29 @@ require("mason-lspconfig").setup_handlers {
             }
         }
     }
+    end,
+
+    ["html"] = function ()
+        nvim_lsp.html.setup({
+            init_options = {
+                embeddedLanguages = {
+                    css = true,
+                    javascript = true
+                  },
+            -- Disable formatter as we intend to use djlint
+                provideFormatter = false
+            },
+            filetypes = {"html", "htmldjango", "templ"},
+        })
+    end,
+
+    ["cssls"] = function ()
+        nvim_lsp.cssls.setup({
+            init_options = {
+                provideFormatter = false
+            },
+            filetypes = {"html", "htmldjango", "css", "scss"},
+        })
     end
 }
 
@@ -126,3 +149,4 @@ require("lsp.lua")
 require("lsp.efm")
 require("lsp.cloudformation")
 require("lsp.django_templates")
+require("lsp.html")
