@@ -125,3 +125,4 @@ require("mason-lspconfig").setup_handlers {
 require("lsp.lua")
 require("lsp.efm")
 require("lsp.cloudformation")
+require("lsp.django_templates")
