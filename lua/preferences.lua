@@ -45,7 +45,7 @@ Preferences = {
         inlineBlameDelay =  200,
     },
     displayFloatingSignatures = false, -- When typing, a floating window will apprear with signature help
-    linters = {"black", "prettier", "flake8", "mypy", "isort", "eslint-lsp" },
+    linters = {"black", "prettier", "flake8", "mypy", "isort", "eslint-lsp", "djlint" },
     languageServers = { "bashls", "dockerls", "graphql", "ts_ls", "marksman", "pyright", "terraformls", "yamlls", "jsonls"},
     displayGitSignsWhenStaged = false,
 }

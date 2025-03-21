@@ -65,10 +65,15 @@ local cloudformation = {
     lintIgnoreExitCode = true,
 }
 
+local djlint = {
+    formatCommand = "djlint --reformat --quiet --warn -",
+    formatStdin = true,
+}
+
 require"lspconfig".efm.setup {
     filetypes = {
         "lua", "python", "javascriptreact", "javascript", "typescript", "typescriptreact", "sh", "html", "css", "json",
-        "yaml", "markdown", "hcl", "terraform", "yaml.cloudformation"
+        "yaml", "markdown", "hcl", "terraform", "yaml.cloudformation", "htmldjango"
     },
     init_options = {documentFormatting = true},
     settings = {
@@ -82,6 +87,7 @@ require"lspconfig".efm.setup {
             typescript = tsserver,
             typescriptreact = tsserver,
             html = {prettier},
+            htmldjango = {djlint},
             css = {prettier},
             json = {prettier},
             yaml = {prettier},
