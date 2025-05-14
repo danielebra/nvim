@@ -252,32 +252,56 @@ function _apply_custom_theme()
     DiffPassThrough()
 end
 
--- https://github.com/norcalli/nvim_utils/blob/master/lua/nvim_utils.lua#L554-L567
--- At the time of creating this file, nvim doesn't support augroup. See PR: https://github.com/neovim/neovim/pull/12378
-function nvim_create_augroups(definitions)
-    for group_name, definition in pairs(definitions) do
-        vim.api.nvim_command('augroup ' .. group_name)
-        vim.api.nvim_command('autocmd!')
-        for _, def in ipairs(definition) do
-            local command = table.concat(vim.tbl_flatten {'autocmd', def}, ' ')
-            vim.api.nvim_command(command)
-        end
-        vim.api.nvim_command('augroup END')
+local augroups = {
+  _yank = {
+    {
+      event = 'TextYankPost',
+      opts = {
+        pattern = '*',
+        callback = function()
+          vim.hl.on_yank({
+            higroup = 'HighlightedyankRegion',
+            timeout = Preferences.designSystem.yank.highlightDuration,
+          })
+        end,
+      },
+    },
+  },
+  _customTheme = {
+    {
+      event = 'ColorScheme',
+      opts = {
+        pattern = '*',
+        callback = function()
+          _apply_custom_theme()
+        end,
+      },
+    },
+  },
+  resize_on_window_change = {
+    {
+      event = 'VimResized',
+      opts = {
+        pattern = '*',
+        command = 'wincmd =',
+      },
+    },
+  },
+}
+
+local function nvim_create_augroups(definitions)
+  for group_name, definition in pairs(definitions) do
+    local augroup = vim.api.nvim_create_augroup(group_name, { clear = true })
+    for _, def in ipairs(definition) do
+      local event = def.event
+      local opts = def.opts
+      opts.group = augroup
+      vim.api.nvim_create_autocmd(event, opts)
     end
+  end
 end
 
-nvim_create_augroups({
-    _yank = {
-        {
-            'TextYankPost', '*',
-            "lua require('vim.highlight').on_yank({higroup = 'HighlightedyankRegion', timeout = " ..
-                Preferences.designSystem.yank.highlightDuration .. "})"
-        }
-
-    },
-    _customTheme = {{"ColorScheme", "*", "lua _apply_custom_theme()"}},
-    resize_on_window_change = {{"VimResized", "*", ":wincmd =" }}
-})
+nvim_create_augroups(augroups)
 
 _apply_custom_theme() -- :thinking: theme is not applying automatically?
 
