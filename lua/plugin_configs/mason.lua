@@ -64,89 +64,90 @@ require("mason-lspconfig").setup({
 local nvim_lsp = require('lspconfig')
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require("mason-lspconfig").setup_handlers {
-    -- The first entry (without a key) will be the default handler
-    -- and will be called for each installed server that doesn't have
-    -- a dedicated handler.
-    function (server_name) -- default handler (optional)
-        require("lspconfig")[server_name].setup { on_attach = duped_on_attach, capabilities = capabilities}
-    end,
+-- This is removed (NVIM 0.11)
+-- require("mason-lspconfig").setup_handlers {
+--     -- The first entry (without a key) will be the default handler
+--     -- and will be called for each installed server that doesn't have
+--     -- a dedicated handler.
+--     function (server_name) -- default handler (optional)
+--         require("lspconfig")[server_name].setup { on_attach = duped_on_attach, capabilities = capabilities}
+--     end,
     -- Next, you can provide a dedicated handler for specific servers.
     -- For example, a handler override for the `rust_analyzer`:
-    ["pyright"] = function ()
-        nvim_lsp.pyright.setup {
-            on_attach = duped_on_attach,
-            settings = {
-                python = {
-                    analysis = {
-                        autoSearchPaths = true,
-                        diagnosticMode = "workspace",
-                        useLibraryCodeForTypes = true,
-                        extraPaths = Preferences.python.extraPaths
-                    }
-                }
-        }
-    }
-    end,
+    -- ["pyright"] = function ()
+    --     nvim_lsp.pyright.setup {
+    --         on_attach = duped_on_attach,
+    --         settings = {
+    --             python = {
+    --                 analysis = {
+    --                     autoSearchPaths = true,
+    --                     diagnosticMode = "workspace",
+    --                     useLibraryCodeForTypes = true,
+    --                     extraPaths = Preferences.python.extraPaths
+    --                 }
+    --             }
+    --     }
+    -- }
+    -- end,
 
-    -- yaml
-    ["yamlls"] = function ()
-        nvim_lsp.yamlls.setup {
-            on_attach = duped_on_attach,
-            filetypes = { "yaml", "yaml.cloudformation" },
-            settings = {
-                yaml = {
-                    customTags = {
-                        "!fn",
-                        "!And",
-                        "!If",
-                        "!Not",
-                        "!Equals",
-                        "!Or",
-                        "!FindInMap sequence",
-                        "!Base64",
-                        "!Cidr",
-                        "!Ref",
-                        "!Ref Scalar",
-                        "!Sub",
-                        "!GetAtt",
-                        "!GetAZs",
-                        "!ImportValue",
-                        "!Select",
-                        "!Split",
-                        "!Join sequence"
-                    }
-            }
-        }
-    }
-    end,
+    -- -- yaml
+    -- ["yamlls"] = function ()
+    --     nvim_lsp.yamlls.setup {
+    --         on_attach = duped_on_attach,
+    --         filetypes = { "yaml", "yaml.cloudformation" },
+    --         settings = {
+    --             yaml = {
+    --                 customTags = {
+    --                     "!fn",
+    --                     "!And",
+    --                     "!If",
+    --                     "!Not",
+    --                     "!Equals",
+    --                     "!Or",
+    --                     "!FindInMap sequence",
+    --                     "!Base64",
+    --                     "!Cidr",
+    --                     "!Ref",
+    --                     "!Ref Scalar",
+    --                     "!Sub",
+    --                     "!GetAtt",
+    --                     "!GetAZs",
+    --                     "!ImportValue",
+    --                     "!Select",
+    --                     "!Split",
+    --                     "!Join sequence"
+    --                 }
+    --         }
+    --     }
+    -- }
+    -- end,
 
-    ["html"] = function ()
-        nvim_lsp.html.setup({
-            init_options = {
-                embeddedLanguages = {
-                    css = true,
-                    javascript = true
-                  },
-            -- Disable formatter as we intend to use djlint
-                provideFormatter = false
-            },
-            filetypes = {"html", "htmldjango", "templ"},
-        })
-    end,
+    -- ["html"] = function ()
+    --     nvim_lsp.html.setup({
+    --         init_options = {
+    --             embeddedLanguages = {
+    --                 css = true,
+    --                 javascript = true
+    --               },
+    --         -- Disable formatter as we intend to use djlint
+    --             provideFormatter = false
+    --         },
+    --         filetypes = {"html", "htmldjango", "templ"},
+    --     })
+    -- end,
 
-    ["cssls"] = function ()
-        nvim_lsp.cssls.setup({
-            init_options = {
-                provideFormatter = false
-            },
-            filetypes = {"html", "htmldjango", "css", "scss"},
-        })
-    end
-}
+    -- ["cssls"] = function ()
+    --     nvim_lsp.cssls.setup({
+    --         init_options = {
+    --             provideFormatter = false
+    --         },
+    --         filetypes = {"html", "htmldjango", "css", "scss"},
+    --     })
+    -- end
+-- }
 
-require("lsp.lua")
-require("lsp.efm")
-require("lsp.cloudformation")
-require("lsp.django_templates")
-require("lsp.html")
+-- require("lsp.lua")
+-- require("lsp.efm")
+-- require("lsp.cloudformation")
+-- require("lsp.django_templates")
+-- require("lsp.html")
