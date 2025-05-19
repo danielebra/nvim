@@ -92,6 +92,7 @@ return require("packer").startup(function(use)
     use {'CosmicNvim/cosmic-ui', requires = {{'MunifTanjim/nui.nvim'}, {'nvim-lua/plenary.nvim'}}} -- Code Actions floating UI
 
     use {"rcarriga/nvim-notify"} -- Notification UI
+    -- Broken in neovim 0.11. Archived and read only
     use {"p00f/nvim-ts-rainbow"} -- Rainbow brackets
 
     use { "nvim-neotest/neotest", requires = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter", "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-python", "nvim-neotest/nvim-nio" } } -- Run tests
