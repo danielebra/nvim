@@ -29,3 +29,4 @@ require('plugin_configs.octo')
 require('plugin_configs.diffview')
 
 require('lsp')
+-- require("plugin_configs.null_ls")
