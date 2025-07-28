@@ -30,20 +30,6 @@ require'nvim-treesitter.configs'.setup {
     -- indent = {enable = {"javascriptreact", "python"}},
     autotag = {enable = true},
 
-    -- Broken in neovim 0.11
-    rainbow = {
-        enable = false,
-        colors = {
-            Preferences.designSystem.palette.lightBlue,
-            Preferences.designSystem.palette.purple,
-            Preferences.designSystem.palette.yellow,
-            Preferences.designSystem.palette.orange,
-            Preferences.designSystem.palette.maroon,
-            Preferences.designSystem.palette.brightGreen,
-            Preferences.designSystem.palette.lightGray,
-        }
-    },
-
   playground = {
     enable = true,
     disable = {},
