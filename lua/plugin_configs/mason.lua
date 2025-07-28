@@ -147,7 +147,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- }
 
 -- require("lsp.lua")
--- require("lsp.efm")
+require("lsp.efm")
 -- require("lsp.cloudformation")
 -- require("lsp.django_templates")
 -- require("lsp.html")
