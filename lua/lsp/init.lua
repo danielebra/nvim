@@ -26,7 +26,6 @@ vim.diagnostic.config({
 local duped_on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-    client.server_capabilities.documentFormattingProvider = false
 
     --
     -- if client.server_capabilities.documentSymbolProvider then

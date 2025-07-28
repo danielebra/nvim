@@ -107,5 +107,6 @@ return require("packer").startup(function(use)
     use "pwntester/octo.nvim" -- Github
     use "sindrets/diffview.nvim"  -- Diff
 
+    use { "nvimtools/none-ls.nvim", requires= { "nvim-lua/plenary.nvim" } }
 end)
 
