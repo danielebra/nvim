@@ -23,14 +23,15 @@ vim.diagnostic.config({
   }
 })
 
+local navic = require("nvim-navic")
 local duped_on_attach = function(client, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-    --
-    -- if client.server_capabilities.documentSymbolProvider then
-    --     navic.attach(client, bufnr)
-    -- end
+    
+    if client.server_capabilities.documentSymbolProvider then
+      navic.attach(client, bufnr)
+    end
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -56,7 +57,6 @@ local duped_on_attach = function(client, bufnr)
     buf_set_keymap('n', '<leader>ln', '<cmd>lua vim.diagnostic.goto_next { float = false }<CR>', opts)
     buf_set_keymap('n', '<space>lq', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts) -- Conflict with quit
     buf_set_keymap("n", "<space>lf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts) -- Prefixed with l for now
-    vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, opts)
 
 end
 
