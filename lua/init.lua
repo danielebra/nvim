@@ -27,6 +27,7 @@ require('plugin_configs.trouble')
 require('plugin_configs.debugger')
 require('plugin_configs.octo')
 require('plugin_configs.diffview')
+require('plugin_configs.leetcode')
 
 require('lsp')
 -- require("plugin_configs.null_ls")

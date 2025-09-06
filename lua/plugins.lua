@@ -106,5 +106,6 @@ return require("packer").startup(function(use)
     use "sindrets/diffview.nvim"  -- Diff
 
     use { "nvimtools/none-ls.nvim", requires= { "nvim-lua/plenary.nvim" } }
+    use { "kawre/leetcode.nvim", requires = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" } }
 end)
 
